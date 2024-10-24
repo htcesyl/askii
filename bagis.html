@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bağış Yap</title>
+    <link rel="stylesheet" href="bagis.css">
+</head>
+<body>
+    <div class="donation-form">
+        <h2>Bağış Yap</h2>
+        <form action="odeme.html">
+            <label for="amount">Bağış Tutarı (₺):</label>
+            <input type="number" id="amount" name="amount" min="1" required>
+            
+            <h3>Ödeme Bilgileri</h3>
+            <label for="cardname">Kart Üzerindeki İsim:</label>
+            <input type="text" id="cardname" name="cardname" required>
+
+            <label for="cardnumber">Kart Numarası:</label>
+            <input type="text" id="cardnumber" name="cardnumber" required>
+
+            <label for="expiry">Son Kullanma Tarihi (AA/YY):</label>
+            <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required>
+
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" required>
+
+            <input type="submit" value="Ödeme Yap">
+        </form>
+    </div>
+</body>
+</html>
