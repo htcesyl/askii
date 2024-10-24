@@ -194,3 +194,80 @@ body {
     font-size: 16px;                      /* Yazı boyutu */
     margin-left: 10px;
 }
+.info-box {
+    
+    border-radius: 8px;
+    padding: 20px;
+    margin: 50px 0; /* Üst ve alt boşluk */
+}
+
+.info-title {
+    font-size: 65px; /* Başlık boyutu */
+    color: rgb(0, 0, 0); /* Başlık rengi */
+    margin-bottom: 10px; /* Başlık ile metin arasında boşluk */
+    margin: 50px 0 30px 30px; /* Üst ve alt boşluk */
+
+}
+
+.info-text {
+    color: #000; /* Metin rengi */
+    line-height: 1.5; /* Satır yüksekliği */
+    font-size: 20px; /* Başlık boyutu */
+    margin: 0px 0 30px 30px; /* Üst ve alt boşluk */
+}
+.footer {
+    background-color: #ff5c5c; /* Kırmızı arka plan */
+    padding: 20px 0; /* Üst ve alt boşluk */
+    position: relative;
+}
+
+.footer-content {
+    display: flex; /* Esnek kutu modeli ile yan yana yerleştirme */
+    justify-content: space-between; /* Aralığı eşitleme */
+    align-items: center; /* Dikey ortalama */
+    padding: 0 5px; /* İç boşluk */
+}
+
+.footer-title {
+    margin-left: 5px; /* Sol taraftan boşluk */
+    font-size: 24px; /* Başlık boyutu */
+    color: white; /* Başlık rengi */
+}
+
+.contact-info {
+    text-align: right; /* Sağ tarafa hizalama */
+    color: white; /* Metin rengi */
+}
+
+.contact-info span {
+    margin: 0 15px; /* Boşluk */
+}
+
+.footer-line {
+    margin: 10px 0; /* Çizgi ile metin arasında boşluk */
+    border: none; /* Çizgi olmadan */
+    height: 1px; /* Yükseklik */
+    background-color: rgba(255, 255, 255, 0.5); /* Saydam çizgi */
+}
+
+.social-media {
+    display: flex; /* Esnek kutu modeli ile yan yana yerleştirme */
+    justify-content: flex-end; /* Sağ tarafa yerleştirme */
+    margin-top: 30px; /* Üst boşluk ekleyerek aşağı kaydırma */
+    margin-bottom: 0px; /* Alt boşluk */
+}
+
+.social-media a {
+    color: white; /* İkon rengi */
+    font-size: 24px; /* İkon boyutu */
+    margin: 0 10px; /* Sol ve sağ boşluk */
+}
+
+.footer-bottom {
+    text-align: left; /* Sol tarafa hizalama */
+    color: white; /* Metin rengi */
+    margin-left: 5px; /* Sol taraftan boşluk */
+    position: absolute; /* Sabit pozisyon */
+    bottom: 25px; /* Alt kısmına 20px uzaklık */
+    left: 5px; /* Soldan 5px uzaklık */
+}
