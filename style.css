@@ -155,9 +155,10 @@ body {
 }
 
 .qr-code img {
-    width: 100px;                         /* QR kod genişliği */
-    height: 100px;                        /* QR kod yüksekliği */
+    width: 120px;    /* QR kod genişliği arttırıldı */
+    height: 150px;   /* QR kod yüksekliği arttırıldı */
 }
+
 
 .store-container {
     display: flex;                        /* Yan yana dizim için flexbox kullan */
@@ -187,4 +188,5 @@ body {
     color: white;                         /* Bağlantı rengi */
     text-decoration: none;                /* Altı çizgi yok */
     font-size: 16px;                      /* Yazı boyutu */
+    margin-left: 10px;
 }
