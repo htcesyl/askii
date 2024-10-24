@@ -14,6 +14,8 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     overflow: hidden;
+    font-family: "Jost", serif;
+
 }
 
 .signup-form h2 {
