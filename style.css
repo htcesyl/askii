@@ -1,0 +1,91 @@
+/* Genel ayarlar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFFFFF; /* Beyaz arka plan */
+    overflow-x: hidden; /* Yatay kaydırmayı engelle */
+}
+
+/* Topbar */
+.topbar {
+    width: 100%;
+    height: 60px;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+    position: fixed; /* Topbar sabitleniyor */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Üstte kalması için */
+}
+
+/* Sol Taraf (Bağış yap metni) */
+.left .donate-text {
+    color: #E27396;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.left .donate-text:hover {
+    color: #B0C4B1;
+}
+
+/* Sağ Taraf (Giriş yap ve Kayıt ol) */
+.right a {
+    color: #E27396;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.right a:hover {
+    color: #B0C4B1;
+}
+
+/* Arka plan fotoğrafı */
+.hero-section {
+    width: 100%;
+    height: 100vh; /* Tüm sayfayı kapsar */
+    background: url('./image/HByeKGm-wallpaper-for-desktop-full-screen.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 60px; /* Topbar alanı kadar boşluk bırak */
+}
+
+/* Bağış yap butonu */
+.donate-btn {
+    background-color: #E27396;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+    z-index: 1; /* Üstte kalması için */
+}
+
+.donate-btn:hover {
+    background-color: #B0C4B1;
+}
+
+/* Sayfa içeriği */
+.content {
+    padding: 20px;
+    height: 200vh; /* Sayfa kaydırılabilir olsun */
+    background-color: #f8f8f8;
+}
