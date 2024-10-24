@@ -17,6 +17,7 @@ body {
 }
 
 .signup-form h2 {
+    padding-top: 100px;
     margin: 100px;
     color:#3F51B5;
     font-size: 40px;
