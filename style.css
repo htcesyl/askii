@@ -131,3 +131,60 @@ body {
     font-size: 16px;                /* Açıklama yazı boyutu */
 }
 
+.main-box {
+    background-color: red;                /* Kutu rengi */
+    border-radius: 15px;                  /* Kenar yuvarlama */
+    padding: 20px;                        /* İç boşluk */
+    margin: 20px 10%;                     /* Üstten ve alttan boşluk, sağdan ve soldan %10 boşluk */
+    color: white;                         /* Yazı rengi */
+    text-align: center;                   /* Yazıları ortala */
+}
+
+.main-title {
+    font-size: 28px;                      /* Başlık boyutu */
+    margin-bottom: 10px;                  /* Başlık altı boşluk */
+}
+
+.main-text {
+    font-size: 16px;                      /* Açıklama metni boyutu */
+    margin-bottom: 20px;                  /* Metin altı boşluk */
+}
+
+.qr-code {
+    text-align: left;                     /* QR kodun sola hizalanması için */
+}
+
+.qr-code img {
+    width: 100px;                         /* QR kod genişliği */
+    height: 100px;                        /* QR kod yüksekliği */
+}
+
+.store-container {
+    display: flex;                        /* Yan yana dizim için flexbox kullan */
+    justify-content: center;              /* Ortala */
+    margin-top: 20px;                     /* Üstten boşluk */
+}
+
+.store-box {
+    background-color: #E27396;            /* Kutu rengi */
+    color: white;                         /* Yazı rengi */
+    padding: 15px;                       /* İç boşluk */
+    border-radius: 10px;                 /* Kenar yuvarlama */
+    margin: 0 10px;                       /* Kutu arası boşluk */
+    flex: 1;                              /* Eşit bölmeli olmasını sağla */
+    text-align: center;                   /* Yazıları ortala */
+    display: flex;                        /* İçeriği esnek hale getir */
+    align-items: center;                  /* Dikey ortalama */
+}
+
+.store-logo {
+    width: 30px;                         /* Logo genişliği */
+    height: auto;                        /* Logo yüksekliği otomatik */
+    margin-right: 10px;                 /* Logo ile metin arası boşluk */
+}
+
+.store-box a {
+    color: white;                         /* Bağlantı rengi */
+    text-decoration: none;                /* Altı çizgi yok */
+    font-size: 16px;                      /* Yazı boyutu */
+}
