@@ -34,10 +34,12 @@ body {
     font-weight: bold;
     cursor: pointer;
     transition: color 0.3s ease;
+    text-decoration: none;
 }
 
 .left .donate-text:hover {
     color: #B0C4B1;
+    text-decoration: none;
 }
 
 /* Sağ Taraf (Giriş yap ve Kayıt ol) */
