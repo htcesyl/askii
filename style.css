@@ -58,7 +58,7 @@ body {
 .hero-section {
     width: 100%;
     height: 100vh; /* Tüm sayfayı kapsar */
-    background: url('./image/HByeKGm-wallpaper-for-desktop-full-screen.jpg') no-repeat center center/cover;
+    background: url('./image/araba.jpg') no-repeat center center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -89,3 +89,43 @@ body {
     height: 200vh; /* Sayfa kaydırılabilir olsun */
     background-color: #f8f8f8;
 }
+
+.container {
+    display: flex;                   /* Yan yana dizim için flexbox kullan */
+    justify-content: space-around;   /* Alanı eşit şekilde dağıt */
+    padding: 20px 0;                /* Üstten ve alttan boşluk */
+}
+
+.box {
+    background-color: #B0C4B1;       /* Kutucuk arka plan rengi */
+    border-radius: 10px;            /* Kenar yuvarlama */
+    text-align: center;              /* Yazıları ortala */
+    padding: 20px;                   /* İç boşluk */
+    width: 30%;                      /* Kutucuk genişliği */
+}
+
+.image-container {
+    width: 100px;                   /* Daire boyutu */
+    height: 100px;                  /* Daire boyutu */
+    border-radius: 50%;             /* Daire şekli */
+    overflow: hidden;               /* Taşan kısmı gizle */
+    margin: 0 auto 10px;           /* Ortala ve altına boşluk bırak */
+}
+
+.image-container img {
+    width: 100%;                   /* Resim boyutlandırma */
+    height: 100%;                  /* Resim boyutlandırma */
+    object-fit: cover;             /* Resmin taşmasını önle */
+}
+
+.title {
+    color: #E27396;                 /* Pembe başlık rengi */
+    font-size: 20px;                /* Başlık boyutu */
+    margin: 10px 0;                /* Başlık üstü ve altı boşluk */
+}
+
+.description {
+    color: #000;                    /* Standart yazı rengi */
+    font-size: 16px;                /* Açıklama yazı boyutu */
+}
+
