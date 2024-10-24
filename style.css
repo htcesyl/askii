@@ -66,6 +66,7 @@ body {
     align-items: center;
     position: relative;
     margin-top: 60px; /* Topbar alanı kadar boşluk bırak */
+    margin-bottom: 70px;
 }
 
 /* Bağış yap butonu */
@@ -104,6 +105,7 @@ body {
     text-align: center;              /* Yazıları ortala */
     padding: 20px;                   /* İç boşluk */
     width: 30%;                      /* Kutucuk genişliği */
+    height: 300px;
 }
 
 .image-container {
@@ -138,6 +140,7 @@ body {
     margin: 20px 10%;                     /* Üstten ve alttan boşluk, sağdan ve soldan %10 boşluk */
     color: white;                         /* Yazı rengi */
     text-align: center;                   /* Yazıları ortala */
+    margin-top: 70px;
 }
 
 .main-title {
@@ -176,6 +179,7 @@ body {
     text-align: center;                   /* Yazıları ortala */
     display: flex;                        /* İçeriği esnek hale getir */
     align-items: center;                  /* Dikey ortalama */
+    
 }
 
 .store-logo {
