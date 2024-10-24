@@ -17,10 +17,15 @@ body {
 }
 
 .signup-form h2 {
-    padding-top: 100px;
-    margin: 100px;
+    padding-top: 200px;
+    margin: 70px;
     color:#3F51B5;
     font-size: 40px;
+    display: flex;
+    flex-direction: column;  /* Yazıları alt alta koyar */
+    justify-content: center; /* Dikey ortalama */
+    align-items: center;     /* Yatay ortalama */
+    
 }
 
 .signup-form input {
