@@ -1,0 +1,76 @@
+/* Sayfa Genel Ayarlar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* Topbar */
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    background-color: #333;
+    color: #fff;
+}
+
+.topbar h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Arka Plan Resmi ve İçerik */
+.background-container {
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 60px);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+.page-background {
+    background: url("./image/araba.jpg") center/cover no-repeat;
+    height: 100vh; /* Tüm görünür yüksekliği kaplasın */
+    width: 100vw;  /* Tüm genişliği kaplasın */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* İçeriğin altında kalmasını sağla */
+}
+/* Hover Box Ayarları */
+.hover-box {
+    width: calc(50% - 30px);
+    height: 250px;
+    padding: 20px;
+    background: url("./image/araba.jpg") center/cover no-repeat;
+    border-radius: 12px;
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.6s ease, background-size 0.6s ease; /* Süreyi artırdık */
+    position: relative;
+    overflow: hidden;
+}
+.hover-box p {
+    position: absolute;
+    height: 80px;
+    font-size: 35px;
+   
+}
+/* Hover Efekti */
+.hover-box:hover {
+    transform: scale(1.05);
+    background-size: 120%;
+}
