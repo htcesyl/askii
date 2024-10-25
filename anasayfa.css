@@ -1,0 +1,96 @@
+/* Genel topbar ayarları */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f8f8f8;
+}
+
+/* Sol kısımdaki "askıda iyilik var" yazısı */
+.left .donate-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: #3F51B5;
+    margin-right: 20px;
+}
+
+/* Orta kısımdaki bağlantılar */
+.center-links {
+    display: flex;
+    gap: 20px;
+    color: #3F51B5;
+    font-size: 16px;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.center-links a {
+    color: #3F51B5;
+    font-size: 16px;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+/* Sağ kısımdaki bağlantılar ve buton */
+.right a {
+    color: #3F51B5;
+    font-size: 16px;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+/* "Askıya Bırak" butonu */
+.ask-box {
+    background-color: #E27396;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.ask-box:hover {
+    background-color: #C55A75;
+}
+/* Hero section ayarları */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    background-image: url('./image/araba.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+/* Arka plan fotoğrafının üzerindeki metinler */
+.text-overlay {
+    position: absolute;
+    top: 20%;
+    left: 20px;
+    color: black;
+}
+
+/* Başlık ayarları */
+.main-heading {
+    font-size: 40px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.sub-heading {
+    font-size: 55px;
+    font-weight: bold;
+    color: #E27396; /* Kırmızı ton */
+    margin-bottom: 20px;
+}
+
+.description {
+    font-size: 15px;
+    color: white;
+    max-width: 500px;
+    line-height: 1.5;
+}
