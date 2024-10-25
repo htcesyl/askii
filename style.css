@@ -76,7 +76,7 @@ body {
     position: relative;
     margin-top: 60px; /* Topbar alanı kadar boşluk bırak */
     margin-bottom: 70px;
-    padding-left: 50px; /* Sol kenara biraz boşluk bırak */
+    padding-left: 20px; /* Sol kenardan biraz boşluk bırak */
 }
 
 /* İçerik konteyneri */
@@ -86,24 +86,32 @@ body {
     align-items: flex-start; /* İçeriği sola hizala */
     text-align: left; /* Metni sola hizala */
     padding: 20px;
-
-    border-radius: 10px;
     color: white;
 }
 
 /* Ana başlık stili */
 .main-title {
-    font-size: 64px; /* Yazı boyutunu büyüttüm */
+    font-size: 40px; /* Yazı boyutu 40px */
+    color: black; /* Siyah renk */
     font-weight: bold;
-    text-transform: uppercase;
-    margin-bottom: 10px;
+    margin-bottom: 10px; /* Altına boşluk bırak */
 }
 
 /* Alt başlık stili */
 .sub-title {
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: 55px; /* Yazı boyutu 55px */
+    color: red; /* Kırmızı renk */
+    font-weight: bold;
+    margin-bottom: 30px; /* Altına boşluk bırak */
 }
+
+/* Açıklama metni stili */
+.description-text {
+    font-size: 15px; /* Yazı boyutu 15px */
+    color: white; /* Beyaz renk */
+    max-width: 500px; /* Metnin çok uzun olmaması için sınır koy */
+}
+
 
 /* Bağış yap butonu */
 .donate-btn {
@@ -114,6 +122,7 @@ body {
     font-size: 18px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-top: 30px;
 }
 
 .donate-btn:hover {
