@@ -33,7 +33,7 @@ body {
 }
 
 
-/* Sol Taraf (Bağış yap metni) */
+/* Sol Taraf (Logo metni) */
 .left .donate-text {
     color: #E27396;
     font-size: 25px;
@@ -71,11 +71,38 @@ body {
     height: 100vh; /* Tüm sayfayı kapsar */
     background: url('./image/araba.jpg') no-repeat center center/cover;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; /* İçeriği sola hizala */
     align-items: center;
     position: relative;
     margin-top: 60px; /* Topbar alanı kadar boşluk bırak */
     margin-bottom: 70px;
+    padding-left: 50px; /* Sol kenara biraz boşluk bırak */
+}
+
+/* İçerik konteyneri */
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* İçeriği sola hizala */
+    text-align: left; /* Metni sola hizala */
+    padding: 20px;
+
+    border-radius: 10px;
+    color: white;
+}
+
+/* Ana başlık stili */
+.main-title {
+    font-size: 64px; /* Yazı boyutunu büyüttüm */
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+/* Alt başlık stili */
+.sub-title {
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 
 /* Bağış yap butonu */
@@ -87,13 +114,15 @@ body {
     font-size: 18px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    position: relative;
-    z-index: 1; /* Üstte kalması için */
 }
 
 .donate-btn:hover {
     background-color: #B0C4B1;
 }
+
+
+
+
 
 /* Sayfa içeriği */
 .content {
