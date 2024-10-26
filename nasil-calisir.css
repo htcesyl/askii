@@ -47,6 +47,11 @@
     color: #3F51B5;
     margin: 0;
 }
+.how-it-works-box h3 {
+    font-size: 18px;
+    color: #413a3a;
+    margin: 0;
+}
 
 .how-it-works-box p {
     font-size: 14px;
