@@ -25,10 +25,22 @@ document.getElementById('overlay').addEventListener('click', function() {
 });
 
 
-// script.js
+
+
 document.querySelectorAll('.faq-box').forEach(box => {
-    box.addEventListener('click', () => { 
-        // Açılır pencereyi kapatıp açma işlemi
+    box.addEventListener('click', () => {
+        // Aktif sınıfını ekleyip çıkar
         box.classList.toggle('active');
+        
+        // İçeriği göster/gizle
+        const content = box.querySelector('.faq-content');
+        if (content.style.display === 'block') {
+            content.style.display = 'none';
+        } else {
+            content.style.display = 'block';
+        }
     });
 });
+
+
+

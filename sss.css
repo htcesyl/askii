@@ -32,36 +32,52 @@
 }
 
 .faq-box {
-    background-color: #F0F3FF;
-    color: #3F51B5;
+    background-color: #F0F3FF; /* Başlangıç rengi */
+    color: #3F51B5; /* Yazı rengi */
     padding: 15px 20px;
     border-radius: 10px;
-    margin-bottom: 35px;
-    cursor: pointer;
+    margin-bottom: 15px;
+    cursor: pointer; /* İmleç değişikliği */
     position: relative;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column; /* Dikey hizalama */
+    transition: background-color 0.3s ease; /* Geçiş efekti */
 }
 
-.faq-box .faq-content {
-    display: none;
-    margin-top: 10px;
-    font-size: 14px;
-    color: #333;
+.faq-box:hover {
+    background-color: #E0E7FF; /* Hover durumu rengi */
+}
+
+.faq-title {
+    font-weight: bold; /* Başlık kalın yazı */
+    display: flex; /* Flexbox ile hizala */
+    justify-content: space-between; /* Boşlukları dengele */
+    align-items: center; /* Ortala */
+}
+
+.faq-content {
+    display: none; /* Başlangıçta gizli */
+    padding: 10px 0; /* Yukarıdan ve aşağıdan iç boşluk */
+    font-size: 14px; /* Yazı boyutu */
+    color: #333; /* Yazı rengi */
+    transition: max-height 0.3s ease, opacity 0.3s ease; /* Geçiş efektleri */
+    max-height: 0; /* Başlangıç yüksekliği */
+    overflow: hidden; /* Taşma gizlendi */
+    opacity: 0; /* Saydamlık */
 }
 
 .faq-box.active .faq-content {
-    display: block;
+    display: block; /* Aktif olduğunda göster */
+    max-height: 100px; /* İçeriğe göre ayarlanabilir */
+    opacity: 1; /* Görünür hale getir */
 }
 
-.faq-box .fa-chevron-down {
-    font-size: 20px;
-    color: #3F51B5;
-    transition: transform 0.3s ease;
+.fa-chevron-down {
+    font-size: 20px; /* Ok simgesi boyutu */
+    color: #3F51B5; /* Ok rengi */
+    transition: transform 0.3s ease; /* Dönüş geçiş efekti */
 }
 
 .faq-box.active .fa-chevron-down {
-    transform: rotate(180deg);
+    transform: rotate(180deg); /* Aktif olduğunda döndür */
 }
-

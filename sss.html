@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="style.css">
     <title>Hakkımızda - Askıda İyilik Var</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 
 <body>
@@ -21,7 +21,7 @@
         <div class="left">
             <a href="index.html" class="donate-text">askıda iyilik var</a>
         </div>
-    
+
         <!-- Orta Kısım: Menü bağlantıları -->
         <div class="center-links">
             <a href="hakkimizda.html">Hakkımızda</a>
@@ -29,13 +29,24 @@
             <a href="contact.html">İletişim</a>
             <a href="sss.html">SSS</a>
         </div>
-    
+
         <!-- Sağ Taraf: Profil, Sepetim ve Askıya Bırak butonları -->
         <div class="right">
-            <a href="profile.html">Profilim <i class="fa fa-user-circle"></i></a>
+            <div class="profile-dropdown">
+                <a href="javascript:void(0);" class="profile-btn">Profilim <i class="fa fa-user-circle"></i></a>
+                <div class="dropdown-content">
+                    <a href="#"><i class="fa fa-utensils"></i> Önceki Yediklerim</a>
+                    <a href="#"><i class="fa fa-user"></i> Hesabım</a>
+                    <a href="iletisim.html"><i class="fa fa-question-circle"></i> Yardım Merkezi</a>
+                    <a href="index.html"><i class="fa fa-sign-out-alt"></i> Çıkış Yap</a>
+                </div>
+            </div>
             <a href="cart.html">Sepetim <i class="fa fa-shopping-cart"></i></a>
             <a href="askiya-birak.html" class="ask-box">Askıya Bırak</a>
         </div>
+    </div>
+    <!-- Overlay -->
+    <div id="overlay"></div>
     </div>
 
     <!-- Üstteki fotoğraf ve başlık -->
@@ -46,8 +57,8 @@
         </div>
     </div>
 
-     <!-- SSS İçerik Kısmı -->
-     <div class="faq-container">
+    <!-- SSS İçerik Kısmı -->
+    <div class="faq-container">
         <div class="faq-box">
             <span class="faq-title">Soru 1: Askıda İyilik Var nedir?</span>
             <i class="fa fa-chevron-down"></i>
@@ -74,6 +85,8 @@
             <p class="faq-content">Web sitemiz veya mobil uygulama üzerinden başvuru yaparak destek alabilirsiniz.</p>
         </div>
     </div>
+    
+
 
     <!-- JavaScript dosyasını bağlama -->
     <script src="profil.js"></script>
