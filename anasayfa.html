@@ -32,10 +32,21 @@
 
         <!-- Sağ Taraf: Profil, Sepetim ve Askıya Bırak butonları -->
         <div class="right">
-            <a href="profile.html">Profilim <i class="fa fa-user-circle"></i></a>
+            <div class="profile-dropdown">
+                <a href="javascript:void(0);" class="profile-btn">Profilim <i class="fa fa-user-circle"></i></a>
+                <div class="dropdown-content">
+                    <a href="#"><i class="fa fa-utensils"></i> Önceki Yediklerim</a>
+                    <a href="#"><i class="fa fa-user"></i> Hesabım</a>
+                    <a href="#"><i class="fa fa-question-circle"></i> Yardım Merkezi</a>
+                    <a href="#"><i class="fa fa-sign-out-alt"></i> Çıkış Yap</a>
+                </div>
+            </div>
             <a href="cart.html">Sepetim <i class="fa fa-shopping-cart"></i></a>
             <a href="askiya-birak.html" class="ask-box">Askıya Bırak</a>
         </div>
+    </div>
+    <!-- Overlay -->
+    <div id="overlay"></div>
     </div>
 
 
@@ -146,6 +157,7 @@
         <p class="footer-bottom">2024 Askıda İyilik</p>
     </div>
 
+    <script src="profil.js"></script>
 
 
 </body>

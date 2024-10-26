@@ -55,6 +55,68 @@
     background-color: #C55A75;
 }
 
+/* Profil butonu ve dropdown */
+.profile-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-btn {
+    color: #3F51B5;
+    font-size: 16px;
+    text-decoration: none;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f8f8f8;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    z-index: 2;
+}
+
+.dropdown-content a {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #3F51B5;
+    font-size: 16px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-content a i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.dropdown-content a:hover {
+    background-color: #E0E7FF;
+}
+
+/* Overlay ayarları */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    display: none;
+}
+
+/* JavaScript ile açılan dropdown için aktif durumu */
+.profile-dropdown.active .dropdown-content {
+    display: block;
+}
+
 
 
 /* Hero section ayarları */
