@@ -1,0 +1,55 @@
+/* Arka plan ve başlık */
+.how-it-works-background {
+    
+    height: 100vh; /* Tüm sayfayı kapsar */
+    background-image: url('image/araba.jpg');
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 20px;
+    padding-top: 85px;
+    color: #E27396;
+    text-align: center;
+}
+
+.how-it-works-title {
+    font-size: 38px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+/* Kutucuklar ve düzenleme */
+.how-it-works-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px; /* Kutucuklar arası boşluk */
+    padding: 0 100px; /* Sağdan ve soldan boşluk */
+}
+
+.how-it-works-box {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    width: 80%; /* Genişlik ayarı */
+}
+
+.how-it-works-box i {
+    font-size: 30px;
+    color: #3F51B5; /* İkon rengi */
+    margin-right: 20px; /* İkon ve metin arası boşluk */
+}
+
+.how-it-works-box h2 {
+    font-size: 18px;
+    color: #3F51B5;
+    margin: 0;
+}
+
+.how-it-works-box p {
+    font-size: 14px;
+    color: #333;
+    margin: 5px 0 0;
+}
