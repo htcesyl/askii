@@ -1,8 +1,10 @@
 /* İletişim sayfası düzenlemeleri */
 .contact-page {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 40px;
+    margin-top: 40px;
+    padding-right: 50px;
 }
 
 .contact-heading,
@@ -25,7 +27,9 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
-    flex: 1;
+    flex: 2;
+    padding-right: 60px;
+    
 }
 
 /* Form alanları */
@@ -37,6 +41,7 @@
     border-radius: 5px;
     background-color: #f7f7f7;
     color: gray;
+    padding: 25px;
 }
 
 .contact-form input:focus,
@@ -65,4 +70,55 @@
 ::placeholder {
     color: grey;
     opacity: 0.8;
+}
+.contact-info {
+    flex: 1; /* Sağ sütun 1/3 alan kaplayacak */
+    background-color: red; /* Kutu arka plan rengi */
+    color: white; /* Font rengi */
+    padding: 15px;
+    border-radius: 8px;
+    margin-left: 20px; /* Sol sütun ile arası */
+}
+
+.contact-info-title {
+    font-size: 35px; /* Başlık boyutu */
+    margin-bottom: 5px; /* Başlık ile içerik arası boşluk */
+    text-align: left;
+    padding-bottom: 5px;
+}
+
+.contact-info-description {
+    font-size: 16px; /* Açıklama boyutu */
+    margin-bottom: 20px; /* Açıklama ile sonraki bilgi arası boşluk */
+    text-align: left;
+    padding-top: 5px;
+}
+
+/* İletişim Bilgileri için simgeler ve içerik */
+.contact-info-item {
+    display: flex;
+    align-items: left; /* İkon ve metin hizalaması */
+    margin-bottom: 30px; /* Bilgiler arasında boşluk */
+}
+
+.contact-info-item i {
+    margin-right: 10px; /* İkon ile metin arası boşluk */
+}
+.contact-info-address{
+    text-align: left;
+    padding-top: 10px;
+}
+.contact-info-phone{
+    text-align: left;
+    padding-top: 5px;
+}
+.contact-info-email{
+    text-align: left;
+    padding-top: 5px;
+}
+.contact-info-address,
+.contact-info-phone,
+.contact-info-email {
+    font-size: 14px; /* Metin boyutu */
+    color: white; /* Yazı rengi */
 }

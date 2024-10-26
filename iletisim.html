@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>İletişim</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <link rel="stylesheet" href="iletisim.css">
@@ -44,26 +47,50 @@
         <h2 class="contact-heading" style="color: red; font-size: 15px;">Bizimle iletişime geçin</h2>
         <h3 class="form-title" style="color: black; font-size: 22px;">İletişim Formu</h3>
         <p class="mandatory-text" style="color: grey; font-size: 12px;">* zorunlu alanları doldurunuz.</p>
-
+    
         <!-- İki sütunluk form yapısı -->
         <div class="form-container">
             <!-- Sol sütun -->
             <form class="contact-form">
                 <label for="name" class="sr-only">Adınız</label>
                 <input type="text" id="name" name="name" placeholder="Adınız" required>
-
+    
                 <label for="email" class="sr-only">E-posta</label>
                 <input type="email" id="email" name="email" placeholder="E-posta" required>
-
+    
                 <label for="phone" class="sr-only">Telefon</label>
                 <input type="tel" id="phone" name="phone" placeholder="Telefon" pattern="\d*" required>
-
+    
                 <label for="message" class="sr-only">Notunuz</label>
                 <textarea id="message" name="message" placeholder="Notunuz" required></textarea>
-
+    
                 <button type="submit" class="submit-btn">Gönder</button>
             </form>
+    
+            <!-- Sağ sütun: İletişim Bilgileri Kutusu -->
+            <div class="contact-info">
+                <h3 class="contact-info-title">İletişim Bilgilerimiz</h3>
+                <p class="contact-info-description">İletişim için projenin kurucusu Meal Box ile iletişime geçebilirsiniz.</p>
+                <div class="contact-info-item">
+                    <i class="fa fa-map-marker"></i>
+                    <p class="contact-info-address">
+                        <strong>Adres:</strong><br>
+                        Barbaros Mah. Begonya Sok. Nida Kule Ataşehir Batı No:1/2<br>
+                        Ataşehir, İstanbul
+                    </p>
+                    
+                </div>
+                <div class="contact-info-item">
+                    <i class="fa fa-phone"></i>
+                    <p class="contact-info-phone">Telefon: <br>0850 532 60 62<br>0216 324 81 37</p>
+                </div>
+                <div class="contact-info-item">
+                    <i class="fa fa-envelope"></i>
+                    <p class="contact-info-email">E-Posta: destek@mealbox.com.tr</p>
+                </div>
+            </div>
         </div>
     </div>
+    
 </body>
 </html>
