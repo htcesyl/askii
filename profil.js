@@ -23,3 +23,12 @@ document.getElementById('overlay').addEventListener('click', function() {
     dropdown.classList.remove('active');
     overlay.style.display = 'none';
 });
+
+
+// script.js
+document.querySelectorAll('.faq-box').forEach(box => {
+    box.addEventListener('click', () => { 
+        // Açılır pencereyi kapatıp açma işlemi
+        box.classList.toggle('active');
+    });
+});

@@ -1,0 +1,67 @@
+/* Üstteki fotoğraf ve başlık */
+.about-header {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Fotoğraf yüksekliği artırıldı */
+    overflow: hidden;
+}
+
+.header-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+   
+}
+
+/* SSS İçerik Kutucukları */
+.faq-container {
+    padding: 20px 30px;
+}
+
+.faq-box {
+    background-color: #F0F3FF;
+    color: #3F51B5;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 35px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-box .faq-content {
+    display: none;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+.faq-box.active .faq-content {
+    display: block;
+}
+
+.faq-box .fa-chevron-down {
+    font-size: 20px;
+    color: #3F51B5;
+    transition: transform 0.3s ease;
+}
+
+.faq-box.active .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
