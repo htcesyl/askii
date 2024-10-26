@@ -1,0 +1,68 @@
+/* İletişim sayfası düzenlemeleri */
+.contact-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.contact-heading,
+.form-title,
+.mandatory-text {
+    margin-left: 20px;
+}
+
+/* Form yapısı */
+.form-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex: 1;
+}
+
+/* Form alanları */
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+    color: gray;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    color: black;
+    outline: none;
+    background-color: white;
+}
+
+/* Gönder Butonu */
+.submit-btn {
+    padding: 10px;
+    font-size: 16px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: darkred;
+}
+
+/* Placeholders renk ayarları */
+::placeholder {
+    color: grey;
+    opacity: 0.8;
+}

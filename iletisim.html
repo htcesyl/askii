@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>İletişim</title>
+</head>
+<body>
+    <link rel="stylesheet" href="iletisim.css">
+
+
+    <!-- Topbar kısmı -->
+    <div class="topbar">
+        <link rel="stylesheet" href="anasayfa.css">
+
+        <div class="left">
+            <a href="index.html" class="donate-text">askıda iyilik var</a>
+        </div>
+        <div class="center-links">
+            <a href="hakkimizda.html">Hakkımızda</a>
+            <a href="how-it-works.html">Nasıl Çalışır</a>
+            <a href="contact.html">İletişim</a>
+            <a href="faq.html">SSS</a>
+        </div>
+        <div class="right">
+            <div class="profile-dropdown">
+                <a href="javascript:void(0);" class="profile-btn">Profilim <i class="fa fa-user-circle"></i></a>
+                <div class="dropdown-content">
+                    <a href="#"><i class="fa fa-utensils"></i> Önceki Yediklerim</a>
+                    <a href="#"><i class="fa fa-user"></i> Hesabım</a>
+                    <a href="#"><i class="fa fa-question-circle"></i> Yardım Merkezi</a>
+                    <a href="#"><i class="fa fa-sign-out-alt"></i> Çıkış Yap</a>
+                </div>
+            </div>
+            <a href="cart.html">Sepetim <i class="fa fa-shopping-cart"></i></a>
+            <a href="askiya-birak.html" class="ask-box">Askıya Bırak</a>
+        </div>
+    </div>
+    <div id="overlay"></div>
+
+    <!-- İletişim Sayfası İçeriği -->
+    <div class="contact-page">
+        <h2 class="contact-heading" style="color: red; font-size: 15px;">Bizimle iletişime geçin</h2>
+        <h3 class="form-title" style="color: black; font-size: 22px;">İletişim Formu</h3>
+        <p class="mandatory-text" style="color: grey; font-size: 12px;">* zorunlu alanları doldurunuz.</p>
+
+        <!-- İki sütunluk form yapısı -->
+        <div class="form-container">
+            <!-- Sol sütun -->
+            <form class="contact-form">
+                <label for="name" class="sr-only">Adınız</label>
+                <input type="text" id="name" name="name" placeholder="Adınız" required>
+
+                <label for="email" class="sr-only">E-posta</label>
+                <input type="email" id="email" name="email" placeholder="E-posta" required>
+
+                <label for="phone" class="sr-only">Telefon</label>
+                <input type="tel" id="phone" name="phone" placeholder="Telefon" pattern="\d*" required>
+
+                <label for="message" class="sr-only">Notunuz</label>
+                <textarea id="message" name="message" placeholder="Notunuz" required></textarea>
+
+                <button type="submit" class="submit-btn">Gönder</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
