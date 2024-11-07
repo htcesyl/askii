@@ -1,0 +1,107 @@
+/* Genel Ayarlar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #3F51B5;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    position: fixed;
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    width: 100%;
+    padding: 0;
+}
+
+.sidebar ul li {
+    width: 100%;
+    padding: 15px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.sidebar ul li a:hover {
+    background-color: #303F9F;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 250px; /* Sidebar genişliği kadar sola kayma */
+    width: calc(100% - 250px);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    background-color: #f4f4f9;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
+
+header h1 {
+    color: #333;
+    font-size: 24px;
+}
+
+header .profile {
+    display: flex;
+    align-items: center;
+}
+
+header .profile img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+/* Content */
+.content {
+    padding: 20px;
+    background-color: #ffffff;
+    min-height: calc(100vh - 60px); /* Header'ın yüksekliğini çıkarır */
+}
+
+.content h2 {
+    color: #3F51B5;
+    margin-bottom: 10px;
+}
+
+.content p {
+    color: #555;
+    line-height: 1.6;
+}

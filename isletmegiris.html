@@ -9,12 +9,9 @@
 <body>
     <div class="topbar">
         <link rel="stylesheet" href="style.css">
-        <!-- Sol Taraf: Bağış yap metni -->
         <div class="left">
             <a href="index.html" class="donate-text">askıda iyilik var</a>
         </div>
-
-        <!-- Sağ Taraf: Giriş yap ve Kayıt ol butonları -->
         <div class="right">
             <a href="kullanici.html" class="login">Giriş Yap</a>
             <a href="kayit.html" class="register">Kayıt Ol</a>
@@ -25,22 +22,25 @@
     <div class="container">
         <!-- Giriş Formu -->
         <div class="form-box login-box">
-            <form action="anasayfa.html">
+            <form action="adminpanel.html">
                 <h2>GİRİŞ YAP</h2>
-                <input type="text" placeholder="E-posta veya Kullanıcı Adı" class="txt">
-                <input type="password" placeholder="Şifre" class="txt">
+                <input type="email" placeholder="E-posta" class="txt" required>
+                <input type="password" placeholder="Şifre" class="txt" required>
                 <input type="submit" value="Giriş Yap" class="giris-btn">
-                
             </form>
         </div>
 
         <!-- Kayıt Formu -->
         <div class="form-box signup-box">
-            <form action="anasayfa.html">
+            <form action="#">
                 <h2>KAYIT OL</h2>
-                <input type="text" placeholder="Ad Soyad" class="txt">
-                <input type="email" placeholder="E-posta" class="txt">
-                <input type="password" placeholder="Şifre" class="txt">
+                <input type="text" placeholder="İşletme Adı" class="txt" required>
+                <input type="text" placeholder="Kategorisi(Mağaza veya Restoran)" class="txt" required>
+                <input type="text" placeholder="İşletme Sahibi Adı Soyadı" class="txt" required>
+                <input type="email" placeholder="İşletme E-posta" class="txt" required>
+                <input type="tel" placeholder="Telefon Numarası(+90)" class="txt" pattern="[0-9]{10}" maxlength="13" minlength="10" required>
+                <input type="password" placeholder="Şifre" class="txt" required>
+                <input type="password" placeholder="Şifre(Tekrar)" class="txt" required>
                 <input type="submit" value="Kayıt Ol" class="signup-btn">
             </form>
         </div>
