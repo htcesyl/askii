@@ -63,7 +63,29 @@
             <p class="description">il ve ilçenizi seçin, dilediğiniz miktarda bağış yapın, toplumsal dayanışmanın bir
                 parçası olun.</p>
         </div>
-        <button class="donate-btn" onclick="window.location.href='harita.html'">Keşfetmeye Başla</button>
+
+        <div class="form-group">
+            <label for="city">İl Seçiniz</label>
+            <select id="city" onchange="populateDistricts()" class="dropdown">
+                <option value="">İl Seçin</option>
+                <option value="ankara">Ankara</option>
+                <option value="istanbul">İstanbul</option>
+                <option value="konya">Konya</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="district">İlçe Seçiniz</label>
+            <select id="district" class="dropdown">
+                <option value="">Önce İl Seçin</option>
+            </select>
+        </div>
+
+        <button class="donate-btn" onclick="showRestaurants()">Keşfetmeye Başla</button>
+
+    
+
+
     </div>
 
 
@@ -75,7 +97,7 @@
             <div class="image-container">
                 <img src="./image/araba.jpg" alt="Resim 1">
             </div>
-            <h3 class="title">Pembe Başlık 1</h3>
+            <h3 class="title">İstanbul</h3>
             <p class="description">Bu, açıklama 1.</p>
         </div>
 
@@ -83,7 +105,7 @@
             <div class="image-container">
                 <img src="./image/araba.jpg" alt="Resim 2">
             </div>
-            <h3 class="title">Pembe Başlık 2</h3>
+            <h3 class="title">Ankara</h3>
             <p class="description">Bu, açıklama 2.</p>
         </div>
 
@@ -91,7 +113,7 @@
             <div class="image-container">
                 <img src="./image/araba.jpg" alt="Resim 3">
             </div>
-            <h3 class="title">Pembe Başlık 3</h3>
+            <h3 class="title">Konya</h3>
             <p class="description">Bu, açıklama 3.</p>
         </div>
     </div>

@@ -136,6 +136,7 @@
     top: 20%;
     left: 20px;
     color: black;
+    margin-bottom: 50px;
 }
 
 /* Başlık ayarları */
@@ -159,3 +160,31 @@
     max-width: 500px;
     line-height: 1.5;
 }
+
+/* Dropdown stilleri */
+.dropdown {
+  background-color: #F0F3FF;
+  color: #3F51B5;
+  border: 1px solid #CDDC39;
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.dropdown:focus {
+  outline: none;
+  border-color: #3F51B5;
+  box-shadow: 0 0 5px rgba(63, 81, 181, 0.5);
+}
+
+/* Etiket stili */
+.form-group label {
+  color: #3F51B5;
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+  margin-top: 50px;
+}
+
+

@@ -43,4 +43,34 @@ document.querySelectorAll('.faq-box').forEach(box => {
 });
 
 
+/*  il ve ilçe dropdown*/
 
+function populateDistricts() {
+    const cityElement = document.getElementById("city");
+    const districtElement = document.getElementById("district");
+    
+    // İlçeleri temizle
+    districtElement.innerHTML = '<option value="">İlçe Seçin</option>';
+  
+    const selectedCity = cityElement.value;
+  
+    // İl ve ilçeleri tanımla
+    const districts = {
+      ankara: ["Çankaya", "Keçiören", "Mamak", "Sincan"],
+      istanbul: ["Beşiktaş", "Kadıköy", "Üsküdar", "Bakırköy"],
+      konya: ["Selçuklu", "Meram", "Karatay", "Akşehir"]
+    };
+  
+    // Seçili ile göre ilçeleri ekle
+    if (districts[selectedCity]) {
+      districts[selectedCity].forEach(district => {
+        const option = document.createElement("option");
+        option.value = district.toLowerCase();
+        option.textContent = district;
+        districtElement.appendChild(option);
+      });
+    }
+  }
+  
+
+  
