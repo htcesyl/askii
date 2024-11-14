@@ -72,5 +72,16 @@ function populateDistricts() {
     }
   }
   
+/* yeni kodlar*/ 
 
-  
+function showRestaurants() {
+    const city = document.getElementById("city").value;
+    const district = document.getElementById("district").value;
+
+    if (city && district) {
+        // Yeni sayfaya yönlendirme, il ve ilçe değerlerini URL parametresi olarak ekler
+        window.location.href = `restaurants.html?city=${city}&district=${district}`;
+    } else {
+        alert("Lütfen il ve ilçe seçin.");
+    }
+}
