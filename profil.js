@@ -72,7 +72,7 @@ function populateDistricts() {
     }
   }
   
-/* yeni kodlar*/ 
+/* keşfetmeye başla butonu için fonksiyon*/ 
 
 function showRestaurants() {
     const city = document.getElementById("city").value;
@@ -85,3 +85,78 @@ function showRestaurants() {
         alert("Lütfen il ve ilçe seçin.");
     }
 }
+
+
+
+
+// Kayıt formu işlemleri
+document.getElementById('register-form').addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirm-password').value;
+
+    if (password !== confirmPassword) {
+        document.getElementById('register-message').textContent = 'Şifreler uyuşmuyor!';
+        return;
+    }
+
+    try {
+        const response = await fetch('/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ name, email, password, confirmPassword }),
+        });
+        const data = await response.text();
+        document.getElementById('register-message').textContent = data;
+    } catch (err) {
+        document.getElementById('register-message').textContent = 'Kayıt işlemi sırasında bir hata oluştu.';
+    }
+});
+
+// Giriş formu işlemleri
+document.getElementById('login-form').addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const email = document.getElementById('login-email').value;
+    const password = document.getElementById('login-password').value;
+
+    try {
+        const response = await fetch('/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email, password }),
+        });
+
+        const data = await response.text();
+
+        if (response.ok) {
+            document.getElementById('login-message').textContent = 'Giriş başarılı! Anasayfaya yönlendiriliyorsunuz...';
+            // Yönlendirme yapılabilir
+            setTimeout(() => window.location.href = 'anasayfa.html', 2000);
+        } else {
+            document.getElementById('login-message').textContent = data;
+        }
+    } catch (err) {
+        document.getElementById('login-message').textContent = 'Giriş başarısız! Lütfen e-posta veya şifrenizi kontrol edin.';
+    }
+});
+
+
+/* kurum paneli için*/ 
+
+
+// Bildirim ve Profil butonlarına tıklanma işlemleri için örnek kod
+document.querySelector('.notification').addEventListener('click', () => {
+    alert('Bildirimleriniz yok!');
+});
+
+document.querySelector('.profile').addEventListener('click', () => {
+    alert('Profil sayfanıza yönlendiriliyorsunuz!');
+});

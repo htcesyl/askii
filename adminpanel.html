@@ -3,38 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yönetici Paneli</title>
+    <title>Panel</title>
     <link rel="stylesheet" href="adminpanel.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <h2>Yönetici Paneli</h2>
-        <ul>
-            <li><a href="#dashboard">Dashboard</a></li>
-            <li><a href="#users">Kullanıcılar</a></li>
-            <li><a href="#donations">Bağışlar</a></li>
-            <li><a href="#settings">Ayarlar</a></li>
-            <li><a href="index.html">Çıkış Yap</a></li>
-        </ul>
-    </div>
+    <div class="topbar">
+        <!-- Sol Taraf: Logo ve Yazı -->
+        <div class="left">
+            <a href="#" class="logo">Askıda İyilik Var</a>
+        </div>
 
-    <!-- Main Content -->
-    <div class="main-content">
-        <!-- Header -->
-        <header>
-            <h1>Hoş Geldiniz, Yönetici</h1>
-            <div class="profile">
-                <span>Admin</span>
-                <img src="profile.jpg" alt="Profile Picture">
-            </div>
-        </header>
+        <!-- Orta Kısım: Arama Çubuğu -->
+        <div class="search-bar">
+            <input type="text" placeholder="Panel içinde arama yapınız...">
+            <i class="fa fa-search"></i>
+        </div>
 
-        <!-- Content -->
-        <div class="content">
-            <h2>Dashboard</h2>
-            <p>Yönetici paneline hoş geldiniz! Buradan site yönetimi ile ilgili işlemleri gerçekleştirebilirsiniz.</p>
+        <!-- Sağ Taraf: Bildirim ve Profil -->
+        <div class="right">
+            <a href="#" class="notification">
+                <i class="fa fa-bell"></i>
+            </a>
+            <a href="#" class="profile">
+                <i class="fa fa-user-circle"></i>
+            </a>
         </div>
     </div>
+
+    <script src="profil.js"></script>
 </body>
 </html>

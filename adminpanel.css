@@ -1,107 +1,63 @@
 /* Genel Ayarlar */
-* {
+body {
     margin: 0;
-    padding: 0;
+    font-family: Arial, sans-serif;
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-}
-
-/* Sidebar */
-.sidebar {
-    width: 250px;
-    height: 100vh;
-    background-color: #3F51B5;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 20px;
-    position: fixed;
-}
-
-.sidebar h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
-}
-
-.sidebar ul {
-    list-style-type: none;
-    width: 100%;
-    padding: 0;
-}
-
-.sidebar ul li {
-    width: 100%;
-    padding: 15px;
-}
-
-.sidebar ul li a {
-    color: white;
-    text-decoration: none;
-    display: block;
-    width: 100%;
-    padding: 10px;
-    border-radius: 4px;
-    text-align: center;
-    font-size: 16px;
-}
-
-.sidebar ul li a:hover {
-    background-color: #303F9F;
-}
-
-/* Main Content */
-.main-content {
-    margin-left: 250px; /* Sidebar genişliği kadar sola kayma */
-    width: calc(100% - 250px);
-    display: flex;
-    flex-direction: column;
-}
-
-/* Header */
-header {
-    background-color: #f4f4f9;
-    padding: 20px;
+/* Topbar Ayarları */
+.topbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #ddd;
+    background-color: #3F51B5;
+    padding: 10px 20px;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-header h1 {
-    color: #333;
-    font-size: 24px;
+/* Sol Kısım: Logo */
+.left .logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
 }
 
-header .profile {
+/* Orta Kısım: Arama Çubuğu */
+.search-bar {
     display: flex;
     align-items: center;
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    width: 50%;
 }
 
-header .profile img {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
+.search-bar input {
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+.search-bar i {
+    color: gray;
     margin-left: 10px;
+    font-size: 16px;
 }
 
-/* Content */
-.content {
-    padding: 20px;
-    background-color: #ffffff;
-    min-height: calc(100vh - 60px); /* Header'ın yüksekliğini çıkarır */
+/* Sağ Kısım: Bildirim ve Profil */
+.right a {
+    margin-left: 15px;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
 }
 
-.content h2 {
-    color: #3F51B5;
-    margin-bottom: 10px;
-}
-
-.content p {
-    color: #555;
-    line-height: 1.6;
+.right a:hover {
+    color: #C55A75;
 }

@@ -188,3 +188,25 @@
 }
 
 
+/*responsive düzenlemeler*/
+@media screen and (max-width: 768px) {
+    .hero-section {
+        height: auto;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .text-overlay {
+        top: 10%;
+        left: 0;
+        width: 100%;
+    }
+
+    .main-heading {
+        font-size: 24px;
+    }
+
+    .sub-heading {
+        font-size: 30px;
+    }
+}
