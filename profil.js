@@ -160,3 +160,13 @@ document.querySelector('.notification').addEventListener('click', () => {
 document.querySelector('.profile').addEventListener('click', () => {
     alert('Profil sayfanıza yönlendiriliyorsunuz!');
 });
+
+
+// restoran dinamik yemek bağışı
+
+document.addEventListener("DOMContentLoaded", () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const city = urlParams.get("city") || "Şehir";
+    const district = urlParams.get("district") || "İlçe";
+    document.getElementById("city-title").innerText = `${city} ${district} Yemek Bağışı`;
+});
