@@ -58,4 +58,34 @@ document.querySelector(".donate-btn").addEventListener("click", () => {
 });
 
 
+/*---------------------restoranın menülerini getiren----------------------------------------------*/ 
+
+const express = require("express");
+const mongoose = require("mongoose");
+const cors = require("cors");
+const dotenv = require("dotenv");
+const restaurantRoutes = require("/routes/menu");
+
+dotenv.config();
+
+const app = express();
+const PORT = 5000;
+
+// Middleware
+app.use(cors());
+app.use(express.json());
+app.use(express.static("public"));
+
+// MongoDB Bağlantısı
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log("MongoDB'ye bağlandı"))
+  .catch((err) => console.error("MongoDB bağlantı hatası:", err));
+
+// Route
+app.use("/api", restaurantRoutes);
+
+// Sunucuyu Başlat
+app.listen(PORT, () => console.log(`Server http://localhost:${PORT} adresinde çalışıyor.`));
+
+
 

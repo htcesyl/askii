@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restoran Bağış Menüsü</title>
+  <link rel="stylesheet" href="../public/css/menu.css">
+</head>
+<body>
+  <!-- Topbar -->
+  <div class="topbar">
+    <h1>Restoran Bağış Menüsü</h1>
+  </div>
+
+  <!-- Ana İçerik Alanı -->
+  <div class="container">
+    <!-- Sol Taraf: Menü Listesi -->
+    <div class="menu-section">
+      <h2>Bağışlanabilir Ürünler</h2>
+      <div class="menu-item" data-name="Kahvaltı Menüsü" data-price="50">
+        <h3>Kahvaltı Menüsü</h3>
+        <p>Fiyat: 50 TL</p>
+        <p>İçerik: Zeytin, peynir, bal, reçel, yumurta</p>
+        <button class="add-to-cart">Sepete Ekle</button>
+      </div>
+      <div class="menu-item" data-name="Öğle Yemeği" data-price="75">
+        <h3>Öğle Yemeği</h3>
+        <p>Fiyat: 75 TL</p>
+        <p>İçerik: Çorba, ana yemek, pilav, salata</p>
+        <button class="add-to-cart">Sepete Ekle</button>
+      </div>
+      <div class="menu-item" data-name="Akşam Yemeği" data-price="100">
+        <h3>Akşam Yemeği</h3>
+        <p>Fiyat: 100 TL</p>
+        <p>İçerik: Izgara et/tavuk, sebze, tatlı</p>
+        <button class="add-to-cart">Sepete Ekle</button>
+      </div>
+    </div>
+
+    <!-- Sağ Taraf: Sepet Bölümü -->
+    <div class="cart-section">
+      <h2>Sepetiniz</h2>
+      <div id="cart-items">
+        <!-- Sepete eklenen ürünler burada listelenecek -->
+      </div>
+      <div class="cart-summary">
+        <p>Toplam Tutar: <span id="total-price">0</span> TL</p>
+        <button id="checkout">Sepeti Onayla</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Dosyası -->
+  <script src="../public/js/menu.js"></script>
+</body>
+</html>
