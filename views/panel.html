@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurum Paneli</title>
+    <link rel="stylesheet" href="../public/css/panel.css">
+</head>
+<body>
+    <div class="panel-container">
+        <!-- Sol Menü -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="../public/image/kofteciyusuf.png" alt="Kurum Logosu">
+                <h3>Kurum Paneli</h3>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Ürün Yönetimi</a></li>
+                    <li><a href="#">Siparişler</a></li>
+                    <li><a href="#">Ayarlar</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Ana İçerik -->
+        <main class="content">
+            <!-- Topbar -->
+            <header class="topbar">
+                <h1>Kurum Paneli</h1>
+                <div class="profile-info">
+                    <span>Merhaba, Admin</span>
+                </div>
+            </header>
+
+            <!-- Ürün Yönetimi Bölümü -->
+            <section class="product-management">
+                <h2>Ürün Yönetimi</h2>
+                <button id="add-product-btn">Yeni Ürün Ekle</button>
+                <div class="product-list">
+                    <!-- Dinamik olarak ürünler buraya yüklenecek -->
+                </div>
+            </section>
+
+            <!-- Modal -->
+            <div class="modal" id="product-modal">
+                <div class="modal-content">
+                    <span class="close-btn" id="close-modal">&times;</span>
+                    <h3>Yeni Ürün Ekle</h3>
+                    <form id="product-form">
+                        <label for="product-name">Ürün İsmi:</label>
+                        <input type="text" id="product-name" required>
+
+                        <label for="product-description">Açıklama:</label>
+                        <textarea id="product-description" required></textarea>
+
+                        <label for="product-price">Fiyat:</label>
+                        <input type="number" id="product-price" required>
+
+                        <label for="product-image">Fotoğraf:</label>
+                        <input type="file" id="product-image" accept="image/*">
+
+                        <button type="submit">Ekle</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../js/panel.js"></script>
+</body>
+</html>
