@@ -123,7 +123,7 @@
 .hero-section {
     position: relative;
     height: 100vh;
-    background-image: url('./image/araba.jpg');
+    background-image: url('../image/araba.jpg');
     background-size: cover;
     background-position: center;
     display: flex;

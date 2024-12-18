@@ -2,7 +2,7 @@
 .how-it-works-background {
     
     height: 100vh; /* Tüm sayfayı kapsar */
-    background-image: url('image/araba.jpg');
+    background-image: url('../image/araba.jpg');
     background-size: cover;
     background-position: center;
     padding-bottom: 20px;

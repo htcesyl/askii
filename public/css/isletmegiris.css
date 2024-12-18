@@ -1,11 +1,10 @@
 body {
-    margin: 0; /* Varsayılan margin'i sıfırlar */
-    height: 100vh; /* Yüksekliği tüm görünüm yüksekliğine ayarlar */
-    background: url('./image/araba.jpg') no-repeat center center / cover; 
-    background-size: cover; /* Resmin tüm arka plana yayılmasını sağlar */
+    margin: 0;
+    height: 100vh;
+    background: url('../image/araba.jpg') no-repeat center center / cover;
+    background-size: cover;
 }
 
-/* İçerik Container Ayarları */
 .container {
     display: flex;
     justify-content: space-around;
@@ -20,22 +19,18 @@ body {
     position: absolute;
 }
 
-/* Form Kutuları */
 .form-box {
     width: 45%;
     padding: 20px;
     text-align: center;
-    
 }
 
-/* Giriş ve Kayıt Başlıkları */
 .form-box h2 {
     font-size: 25px;
     color: #3F51B5;
     margin-bottom: 20px;
 }
 
-/* Input ve Button Ayarları */
 .txt {
     width: 100%;
     padding: 10px;
@@ -56,5 +51,3 @@ body {
     cursor: pointer;
     font-size: 15px;
 }
-
-
