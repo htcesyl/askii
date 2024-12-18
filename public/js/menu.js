@@ -1,3 +1,43 @@
+// URL'den restaurantId'yi al
+const restaurantId = new URLSearchParams(window.location.search).get("restaurantId");
+
+if (restaurantId) {
+  // API'ye istek at
+  fetch(`/routes/restaurants/${restaurantId}`)
+    .then((response) => response.json())
+    .then((data) => {
+      if (data) {
+        // Restoran bilgilerini göster
+        document.querySelector(".topbar h1").textContent = data.name;
+        document.querySelector(".address").textContent = `Adres: ${data.address.street}, ${data.address.city}`;
+        document.querySelector(".hours").textContent = `Çalışma Saatleri: ${data.openingHours}`;
+
+        // Menüleri göster
+        const menuContainer = document.querySelector(".menu-container");
+        data.products.forEach((product) => {
+          const menuItem = `
+            <div class="menu-item">
+              <h3>${product.name}</h3>
+              <p>${product.description}</p>
+              <p>Fiyat: ${product.price} TL</p>
+            </div>
+          `;
+          menuContainer.insertAdjacentHTML("beforeend", menuItem);
+        });
+      }
+    })
+    .catch((error) => {
+      console.error("Veriler alınamadı:", error);
+    });
+} else {
+  alert("Restoran bilgisi alınamadı.");
+}
+
+
+
+
+
+
 // Sepet İşlemleri
 let cart = [];
 const cartItemsContainer = document.getElementById("cart-items");
