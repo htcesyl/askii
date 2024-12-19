@@ -34,39 +34,44 @@
             </header>
 
             <!-- Ürün Yönetimi Bölümü -->
-            <section class="product-management">
-                <h2>Ürün Yönetimi</h2>
-                <button id="add-product-btn">Yeni Ürün Ekle</button>
-                <div class="product-list">
-                    <!-- Dinamik olarak ürünler buraya yüklenecek -->
-                </div>
-            </section>
+<div class="urun-yonetimi">
+    <h2>Ürün Yönetimi</h2>
+    <button id="add-product-btn">Yeni Menü Ekle</button> <!-- ID düzeltildi -->
 
-            <!-- Modal -->
-            <div class="modal" id="product-modal">
-                <div class="modal-content">
-                    <span class="close-btn" id="close-modal">&times;</span>
-                    <h3>Yeni Ürün Ekle</h3>
-                    <form id="product-form">
-                        <label for="product-name">Ürün İsmi:</label>
-                        <input type="text" id="product-name" required>
-
-                        <label for="product-description">Açıklama:</label>
-                        <textarea id="product-description" required></textarea>
-
-                        <label for="product-price">Fiyat:</label>
-                        <input type="number" id="product-price" required>
-
-                        <label for="product-image">Fotoğraf:</label>
-                        <input type="file" id="product-image" accept="image/*">
-
-                        <button type="submit">Ekle</button>
-                    </form>
-                </div>
-            </div>
-        </main>
+    <!-- Menü Kartlarının Görüneceği Bölüm -->
+    <div id="menu-listesi" class="menu-listesi">
+        <!-- Menü kartları buraya eklenecek -->
     </div>
+</div>
+
+<!-- Modal (Yeni Menü Ekleme Formu) -->
+<div id="product-modal" class="modal"> <!-- ID düzeltildi -->
+    <div class="modal-icerik">
+        <h3>Yeni Menü Ekle</h3>
+        <button id="close-modal" style="float:right;">X</button> <!-- Modal kapatma butonu -->
+        <form id="product-form">
+            <label for="product-name">Ürün Adı:</label>
+            <input type="text" id="product-name" name="name" required>
+
+            <label for="product-description">İçeriği:</label>
+            <textarea id="product-description" name="description" rows="3" required></textarea>
+
+            <label for="product-price">Fiyat:</label>
+            <input type="number" id="product-price" name="price" required>
+
+            <label for="product-stock">Stok:</label>
+            <input type="number" id="product-stock" name="stock" required>
+
+            <label for="product-image">Görsel Yükle:</label>
+            <input type="file" id="product-image" name="image" accept="image/*" required>
+
+            <button type="submit">Ekle</button>
+        </form>
+    </div>
+</div>
+
 
     <script src="../public/js/panel.js"></script>
+    <script src="../app.js"></script>
 </body>
 </html>

@@ -1,67 +1,55 @@
-const addProductBtn = document.getElementById('add-product-btn');
+// Modal kontrol
+const addProductBtn = document.getElementById('add-product-btn'); // Buton ID eşleşti
 const productModal = document.getElementById('product-modal');
 const closeModalBtn = document.getElementById('close-modal');
 const productForm = document.getElementById('product-form');
-const productList = document.querySelector('.product-list');
+const productList = document.getElementById('menu-listesi'); // Kartların listelendiği alan
 
-// Modal açma
 addProductBtn.addEventListener('click', () => {
     productModal.style.display = 'flex';
 });
 
-// Modal kapama
 closeModalBtn.addEventListener('click', () => {
     productModal.style.display = 'none';
+    productForm.reset(); // Formu sıfırla
 });
 
-// Ürün ekleme
+// Menü Ekleme
 productForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const name = document.getElementById('product-name').value;
     const description = document.getElementById('product-description').value;
     const price = document.getElementById('product-price').value;
+    const stock = document.getElementById('product-stock').value;
     const image = document.getElementById('product-image').files[0];
 
-    const formData = new FormData();
-    formData.append('name', name);
-    formData.append('description', description);
-    formData.append('price', price);
-    formData.append('image', image);
+    // Görsel URL'sini geçici olarak oluşturma (front-end için)
+    const imageUrl = URL.createObjectURL(image);
 
-    fetch('/api/products', {
-        method: 'POST',
-        body: formData,
-    })
-        .then(response => response.json())
-        .then(data => {
-            alert('Ürün başarıyla eklendi!');
-            productModal.style.display = 'none';
-            // Yeni ürünü listeye ekle
-            const productCard = document.createElement('div');
-            productCard.classList.add('product-card');
-            productCard.innerHTML = `
-                <h3>${data.name}</h3>
-                <p>${data.description}</p>
-                <p>Fiyat: ${data.price} TL</p>
-            `;
-            productList.appendChild(productCard);
-        })
-        .catch(error => console.error('Hata:', error));
+    const newProduct = {
+        name,
+        description,
+        price,
+        stock,
+        profileImageUrl: imageUrl, // Görsel URL
+    };
+
+    renderProductCard(newProduct); // Yeni ürünü ekrana ekle
+    productModal.style.display = 'none';
+    productForm.reset();
 });
 
-fetch('/api/products')
-    .then(response => response.json())
-    .then(data => {
-        data.forEach(product => {
-            const productCard = document.createElement('div');
-            productCard.classList.add('product-card');
-            productCard.innerHTML = `
-                <h3>${product.name}</h3>
-                <p>${product.description}</p>
-                <p>Fiyat: ${product.price} TL</p>
-            `;
-            productList.appendChild(productCard);
-        });
-    })
-    .catch(error => console.error('Hata:', error));
+// Ürün Kartı Oluşturma Fonksiyonu
+function renderProductCard(product) {
+    const productCard = document.createElement('div');
+    productCard.classList.add('menu-karti'); // CSS için uyumlu sınıf
+    productCard.innerHTML = `
+        <img src="${product.profileImageUrl}" alt="${product.name}" />
+        <h4>${product.name}</h4>
+        <p>${product.description}</p>
+        <p>Fiyat: ${product.price} TL</p>
+        <p>Stok: ${product.stock}</p>
+    `;
+    productList.appendChild(productCard);
+}
