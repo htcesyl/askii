@@ -39,7 +39,7 @@ body, html {
     padding: 20px;
 }
 .page-background {
-    background: url("./image/araba.jpg") center/cover no-repeat;
+    background: url("../image/araba.jpg") center/cover no-repeat;
     height: 100vh; /* Tüm görünür yüksekliği kaplasın */
     width: 100vw;  /* Tüm genişliği kaplasın */
     position: absolute;
@@ -52,7 +52,7 @@ body, html {
     width: calc(50% - 30px);
     height: 250px;
     padding: 20px;
-    background: url("./image/araba.jpg") center/cover no-repeat;
+    background: url("../image/araba.jpg") center/cover no-repeat;
     border-radius: 12px;
     text-align: center;
     color: #fff;
