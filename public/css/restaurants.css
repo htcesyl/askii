@@ -37,7 +37,7 @@ body {
 .header-section {
     position: relative;
     height: 250px;
-    background-image: url('/image/araba.jpg');
+    background-image: url('../image/araba.jpg');
     background-size: cover;
     background-position: center;
 }
