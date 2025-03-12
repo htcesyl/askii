@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="../public/css/anasayfa.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <title>Askıda İyilik Var</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+</head>
+
+<body>
+    
+    <div class="topbar">
+        <!-- Sol Taraf: Logo ve site ismi -->
+        <div class="left">
+            <div class="logo-container">
+                <img src="../public/image/logo.png" alt="Site Icon" class="site-icon">
+                <a href="anasayfa.html" class="donate-text">askıda iyilik var</a>
+            </div>
+        </div>
+
+        <!-- Hamburger Menü -->
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <!-- Orta Kısım: Menü bağlantıları -->
+        <div class="center-links" id="menuLinks">
+            <a href="hakkimizda.html" class="nav-link">Hakkımızda</a>
+            <a href="nasil-calisir.html" class="nav-link">Nasıl Çalışır?</a>
+            <a href="iletisim.html" class="nav-link">İletişim</a>
+            <a href="sss.html" class="nav-link">SSS</a>
+        </div>
+
+        <!-- Sağ Taraf: Profil Menüsü -->
+        <div class="right">
+            <div class="profile-dropdown">
+                <a href="javascript:void(0);" class="profile-btn" id="profileBtn">
+                    Profilim <i class="fa fa-user-circle"></i>
+                </a>
+                <div class="dropdown-content">
+                    <div class="user-info">
+                        <span id="userName"></span>
+                        <span id="userEmail"></span>
+                    </div>
+                    <a href="previous-donations.html"><i class="fa fa-history"></i> Önceki Bağışlarım</a>
+                    <a href="settings.html"><i class="fa fa-cog"></i> Ayarlar</a>
+                    <a href="views/index.html" onclick="handleLogout()"><i class="fa fa-sign-out-alt"></i> Çıkış Yap</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Overlay -->
+    <div id="overlay"></div>
+    </div>
+
+
+    <!-- Arka plan fotoğrafı ve Bağış Yap butonu -->
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1 class="main-heading">Her Bağış Bir İhtiyaç Sahibine</h1>
+            <h2 class="sub-heading">Sıcak Yemek</h2>
+            <p class="description">İl ve ilçenizi seçin, dilediğiniz miktarda bağış yapın, toplumsal dayanışmanın bir
+                parçası olun.</p>
+            
+            <!-- İl ve İlçe Seçimi -->
+            <div class="location-selector">
+                <div class="form-group">
+                    <label for="city">İl Seçiniz</label>
+                    <select id="city" onchange="populateDistricts()" class="dropdown">
+                        <option value="">İl Seçin</option>
+                        <option value="ankara">Ankara</option>
+                        <option value="istanbul">İstanbul</option>
+                        <option value="konya">Konya</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="district">İlçe Seçiniz</label>
+                    <select id="district" class="dropdown">
+                        <option value="">Önce İl Seçin</option>
+                    </select>
+                </div>
+
+                <button type="button" class="donate-btn" onclick="showRestaurants()">
+                    <i class="fas fa-search"></i> Keşfetmeye Başla
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Özellikler Bölümü -->
+    <section class="features">
+        <div class="container">
+            <div class="feature-box">
+                <div class="icon-container">
+                    <i class="fas fa-hand-holding-heart"></i>
+                </div>
+                <h3>Kolay Bağış</h3>
+                <p>Birkaç tıkla güvenli ve hızlı bağış yapın, iyiliğe ortak olun.</p>
+            </div>
+
+            <div class="feature-box">
+                <div class="icon-container">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Güvenilir Platform</h3>
+                <p>Şeffaf ve güvenilir bağış sistemi ile gönül rahatlığıyla destek olun.</p>
+            </div>
+
+            <div class="feature-box">
+                <div class="icon-container">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Sosyal Etki</h3>
+                <p>Toplumsal dayanışmaya katkıda bulunun, fark yaratın.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobil Uygulama Bölümü -->
+    <section class="app-section">
+        <div class="app-content">
+            <h2>Mobil Uygulamamızı İndirin</h2>
+            <p>Askıda İyilik Var uygulamasını indirin, her an her yerden bağış yapın.</p>
+            
+            <div class="qr-container">
+                <img src="../public/image/qr.png" alt="QR Kod" class="qr-code">
+            </div>
+
+            <div class="store-buttons">
+                <a href="#" class="store-btn">
+                    <i class="fab fa-google-play"></i>
+                    <span>Google Play</span>
+                </a>
+                <a href="#" class="store-btn">
+                    <i class="fab fa-apple"></i>
+                    <span>App Store</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hakkımızda Bölümü -->
+    <section class="about-section">
+        <div class="about-content">
+            <h2>Askıda İyilik Nedir?</h2>
+            <p>Askıda İyilik Projesi, toplumsal dayanışmayı artırmayı hedefleyen bir sosyal sorumluluk platformudur. 
+               Ekonomik durumu yetersiz öğrencilere çeşitli hizmetler sunarak onların yaşam kalitelerini artırmayı amaçlar. 
+               Öğrenciler, yemek, kıyafet ve sosyal etkinlik gibi alanlarda doğrudan destek alabilirler.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h4>Askıda İyilik</h4>
+                <div class="contact-info">
+                    <p><i class="fas fa-phone"></i> 0555 555 5555</p>
+                    <p><i class="fas fa-envelope"></i> askidaiyilikvar@gmail.com</p>
+                    <p><i class="fas fa-user"></i> Hatice Soylu</p>
+                </div>
+            </div>
+            
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Askıda İyilik. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="../public/js/main.js"></script>
+    <script src="../public/js/anasayfa.js"></script>
+    
+
+    
+
+
+
+</body>
+
+</html>

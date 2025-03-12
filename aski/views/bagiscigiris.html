@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bağışçı Girişi ve Kayıt</title>
+    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="../public/css/bagiscigiris.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+    <script>
+        // Oturum kontrolü
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
+        if (isLoggedIn) {
+            // Kullanıcı zaten giriş yapmışsa anasayfaya yönlendir
+            window.location.href = 'anasayfa.html';
+        }
+    </script>
+
+    <!-- Topbar -->
+    <div class="topbar">
+        <!-- Sol Taraf: Logo ve site ismi -->
+        <div class="left">
+            <div class="logo-container">
+                <img src="../public/image/logo.png" alt="Site Icon" class="site-icon">
+                <a href="index.html" class="donate-text">askıda iyilik var</a>
+            </div>
+        </div>
+
+        <!-- Hamburger Menü -->
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <!-- Orta Kısım: Menü bağlantıları -->
+        <div class="center-links" id="menuLinks">
+            <a href="hakkimizda.html" class="nav-link">Hakkımızda</a>
+            <a href="nasil-calisir.html" class="nav-link">Nasıl Çalışır?</a>
+            <a href="iletisim.html" class="nav-link">İletişim</a>
+            <a href="sss.html" class="nav-link">SSS</a>
+        </div>
+
+        <!-- Sağ Taraf: Giriş butonları -->
+        <div class="right">
+            <div class="auth-buttons">
+                <a href="bagiscigiris.html" class="auth-btn bagisci-btn">Bağışçı Girişi</a>
+                <a href="isletmegiris.html" class="auth-btn isletme-btn">İşletme Girişi</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- İçerik -->
+    <div class="container">
+        <!-- Giriş Formu -->
+        <div class="form-box login-box">
+            <form id="loginForm" onSubmit="handleLogin(event)">
+                <h2>BAĞIŞÇI GİRİŞ</h2>
+                <input type="email" id="loginEmail" name="email" placeholder="E-posta" class="txt" required>
+                <input type="password" id="loginPassword" name="password" placeholder="Şifre" class="txt" required>
+                <div id="loginMessage" class="message"></div>
+                <input type="submit" value="Giriş Yap" class="giris-btn">
+            </form>
+        </div>
+
+        <!-- Kayıt Formu -->
+        <div class="form-box signup-box">
+            <form id="registerForm" onSubmit="handleRegister(event)">
+                <h2>BAĞIŞÇI KAYIT</h2>
+                <input type="text" id="registerName" name="name" placeholder="Ad" class="txt" required>
+                <input type="text" id="registerSurname" name="surname" placeholder="Soyad" class="txt" required>
+                <input type="email" id="registerEmail" name="email" placeholder="E-posta" class="txt" required>
+                <input type="tel" id="registerPhone" name="phone" placeholder="Telefon Numarası" class="txt" pattern="[0-9]{10}" maxlength="13" minlength="10" required>
+                <input type="password" id="registerPassword" name="password" placeholder="Şifre" class="txt" required>
+                <input type="password" id="registerPasswordConfirm" name="passwordConfirm" placeholder="Şifre(Tekrar)" class="txt" required>
+                <div id="registerMessage" class="message"></div>
+                <input type="submit" value="Kayıt Ol" class="signup-btn">
+            </form>
+        </div>
+    </div>
+
+    <script>
+        async function handleLogin(event) {
+            event.preventDefault();
+            
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            const messageDiv = document.getElementById('loginMessage');
+
+            try {
+                const response = await fetch('http://localhost:3000/api/donor/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email, password })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    // Kullanıcı bilgilerini localStorage'a kaydet
+                    localStorage.setItem('donorData', JSON.stringify(data.data.donor));
+                    localStorage.setItem('isLoggedIn', 'true');
+                    
+                    // Anasayfaya yönlendir
+                    window.location.href = 'anasayfa.html';
+                } else {
+                    messageDiv.textContent = data.message;
+                    messageDiv.style.color = 'red';
+                }
+            } catch (error) {
+                messageDiv.textContent = 'Bir hata oluştu. Lütfen tekrar deneyin.';
+                messageDiv.style.color = 'red';
+            }
+        }
+
+        async function handleRegister(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('registerName').value;
+            const surname = document.getElementById('registerSurname').value;
+            const email = document.getElementById('registerEmail').value;
+            const phone = document.getElementById('registerPhone').value;
+            const password = document.getElementById('registerPassword').value;
+            const passwordConfirm = document.getElementById('registerPasswordConfirm').value;
+            const messageDiv = document.getElementById('registerMessage');
+
+            if (password !== passwordConfirm) {
+                messageDiv.textContent = 'Şifreler eşleşmiyor!';
+                messageDiv.style.color = 'red';
+                return;
+            }
+
+            try {
+                const response = await fetch('http://localhost:3000/api/donor/register', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        name,
+                        surname,
+                        email,
+                        phone,
+                        password
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    messageDiv.textContent = 'Kayıt başarılı! Giriş yapabilirsiniz.';
+                    messageDiv.style.color = 'green';
+                    document.getElementById('registerForm').reset();
+                } else {
+                    messageDiv.textContent = data.message;
+                    messageDiv.style.color = 'red';
+                }
+            } catch (error) {
+                messageDiv.textContent = 'Bir hata oluştu. Lütfen tekrar deneyin.';
+                messageDiv.style.color = 'red';
+            }
+        }
+    </script>
+    
+    <script src="../public/js/main.js"></script>
+</body>
+
+</html>

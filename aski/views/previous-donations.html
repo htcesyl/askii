@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Önceki Bağışlarım - Askıda İyilik Var</title>
+    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="../public/css/previous-donations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <!-- Topbar -->
+    <div class="topbar">
+        <!-- Sol Taraf: Logo ve site ismi -->
+        <div class="left">
+            <div class="logo-container">
+                <img src="../public/image/logo.png" alt="Site Icon" class="site-icon">
+                <a href="anasayfa.html" class="donate-text">askıda iyilik var</a>
+            </div>
+        </div>
+
+        <!-- Hamburger Menü -->
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <!-- Orta Kısım: Menü bağlantıları -->
+        <div class="center-links" id="menuLinks">
+            <a href="hakkimizda.html" class="nav-link">Hakkımızda</a>
+            <a href="nasil-calisir.html" class="nav-link">Nasıl Çalışır?</a>
+            <a href="iletisim.html" class="nav-link">İletişim</a>
+            <a href="sss.html" class="nav-link">SSS</a>
+        </div>
+
+        <!-- Sağ Taraf: Profil Menüsü -->
+        <div class="right">
+            <div class="profile-dropdown">
+                <a href="javascript:void(0);" class="profile-btn" id="profileBtn">
+                    Profilim <i class="fa fa-user-circle"></i>
+                </a>
+                <div class="dropdown-content">
+                    <div class="user-info">
+                        <span id="userName"></span>
+                        <span id="userEmail"></span>
+                    </div>
+                    <a href="previous-donations.html"><i class="fa fa-history"></i> Önceki Bağışlarım</a>
+                    <a href="settings.html"><i class="fa fa-cog"></i> Ayarlar</a>
+                    <a href="#" onclick="handleLogout()"><i class="fa fa-sign-out-alt"></i> Çıkış Yap</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ana içerik -->
+    <div class="donations-container">
+        <div class="donations-header">
+            <h1>Önceki Bağışlarım</h1>
+            <div class="donor-info">
+                <span id="donorName"></span>
+                <span id="totalDonations"></span>
+            </div>
+        </div>
+
+        <div class="donations-stats">
+            <div class="stat-card">
+                <i class="fas fa-heart"></i>
+                <div class="stat-info">
+                    <span class="stat-value" id="totalAmount">0 TL</span>
+                    <span class="stat-label">Toplam Bağış</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-gift"></i>
+                <div class="stat-info">
+                    <span class="stat-value" id="donationCount">0</span>
+                    <span class="stat-label">Bağış Sayısı</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-store"></i>
+                <div class="stat-info">
+                    <span class="stat-value" id="institutionCount">0</span>
+                    <span class="stat-label">Desteklenen İşletme</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="donations-list" id="donationsList">
+            <div class="donations-table">
+                <div class="table-header">
+                    <div class="header-cell">Tarih</div>
+                    <div class="header-cell">İşletme</div>
+                    <div class="header-cell">Ürün</div>
+                    <div class="header-cell">Adet</div>
+                    <div class="header-cell">Tutar</div>
+                    <div class="header-cell">Durum</div>
+                </div>
+                <div class="table-body" id="donationsTableBody">
+                    <!-- Bağışlar buraya dinamik olarak eklenecek -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../public/js/main.js"></script>
+    <script src="../public/js/previous-donations.js"></script>
+</body>
+</html>

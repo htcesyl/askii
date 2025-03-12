@@ -1,0 +1,166 @@
+/* Arka plan ve başlık */
+.how-it-works-background {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../image/araba.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 100px 20px 50px;
+    color: #ECFFE6;
+}
+
+.how-it-works-title {
+    font-size: 42px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.how-it-works-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: #399918;
+    border-radius: 2px;
+}
+
+/* Kutucuklar ve düzenleme */
+.how-it-works-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.how-it-works-box {
+    display: flex;
+    align-items: flex-start;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.how-it-works-box:hover {
+    transform: translateX(10px);
+}
+
+.how-it-works-box i {
+    font-size: 45px;
+    color: #399918;
+    margin-right: 40px;
+    min-width: 60px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.box-content {
+    flex: 1;
+}
+
+.how-it-works-box h2 {
+    font-size: 28px;
+    color: #399918;
+    margin: 0 0 15px 0;
+    font-weight: 600;
+}
+
+.how-it-works-box p {
+    font-size: 16px;
+    color: #333;
+    margin: 0;
+    line-height: 1.8;
+}
+
+/* Responsive tasarım */
+@media screen and (max-width: 768px) {
+    .how-it-works-title {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+
+    .how-it-works-box {
+        padding: 30px;
+    }
+
+    .how-it-works-box i {
+        font-size: 35px;
+        margin-right: 25px;
+        min-width: 45px;
+    }
+
+    .how-it-works-box h2 {
+        font-size: 24px;
+    }
+
+    .how-it-works-box p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .how-it-works-background {
+        padding: 80px 15px 30px;
+    }
+
+    .how-it-works-title {
+        font-size: 28px;
+    }
+
+    .how-it-works-container {
+        padding: 0 10px;
+    }
+
+    .how-it-works-box {
+        padding: 20px;
+    }
+
+    .how-it-works-box i {
+        font-size: 28px;
+        margin-right: 20px;
+        min-width: 35px;
+    }
+
+    .how-it-works-box h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .how-it-works-box p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+}
+
+/* Animasyonlar */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.how-it-works-box {
+    animation: slideIn 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+.how-it-works-box:nth-child(1) { animation-delay: 0.1s; }
+.how-it-works-box:nth-child(2) { animation-delay: 0.2s; }
+.how-it-works-box:nth-child(3) { animation-delay: 0.3s; }
+.how-it-works-box:nth-child(4) { animation-delay: 0.4s; }
+.how-it-works-box:nth-child(5) { animation-delay: 0.5s; }

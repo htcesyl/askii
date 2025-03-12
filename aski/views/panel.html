@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurum Paneli</title>
+    <link rel="stylesheet" href="../public/css/panel.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="panel-container">
+        <!-- Sol Menü -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img id="kurum-logo" src="" alt="Kurum Logosu">
+                <h3 id="kurum-adi"></h3>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#profil">Profil Bilgileri</a></li>
+                    <li><a href="#urunler">Ürün Yönetimi</a></li>
+                    <li><a href="#rezervasyonlar">Rezervasyonlar</a></li>
+                    <li><a href="#bagislar">Bağışlar</a></li>
+                    <li><a href="#hizmetler">Hizmetler</a></li>
+                    <li><a href="#ayarlar">Ayarlar</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Ana İçerik -->
+        <main class="content">
+            <!-- Topbar -->
+            <header class="topbar">
+                <div class="breadcrumb">
+                    <h1>Kurum Paneli</h1>
+                    <p id="kurum-tipi"></p>
+                </div>
+                <div class="profile-info">
+                    <span id="yetkili-kisi"></span>
+                    <button id="cikis-yap">Çıkış Yap</button>
+                </div>
+            </header>
+
+            <!-- Profil Bilgileri Bölümü -->
+            <section id="profil" class="panel-section">
+                <div class="section-header">
+                    <h2>Profil Bilgileri</h2>
+                    <div class="section-actions">
+                        <button id="edit-profile-btn" class="edit-btn">Profili Düzenle</button>
+                    </div>
+                </div>
+                
+                <!-- Profil Görüntüleme Modu -->
+                <div id="profile-view" class="profil-bilgileri">
+                    <div class="profil-foto">
+                        <img id="kurum-logo-preview" src="" alt="Kurum Logosu">
+                        <h3 id="kurum-adi-text"></h3>
+                        <p id="kurum-tipi-text"></p>
+                    </div>
+                    <div class="iletisim-bilgileri">
+                        <h3>İletişim Bilgileri</h3>
+                        <p><strong>E-posta:</strong> <span id="kurum-email-text"></span></p>
+                        <p><strong>Telefon:</strong> <span id="kurum-telefon-text"></span></p>
+                        <p><strong>Çalışma Saatleri:</strong> <span id="calisma-saatleri-text"></span></p>
+                    </div>
+                    <div class="adres-bilgileri">
+                        <h3>Adres Bilgileri</h3>
+                        <p id="tam-adres-text"></p>
+                    </div>
+                </div>
+
+                <!-- Profil Düzenleme Formu -->
+                <form id="profile-form" class="profil-bilgileri-form" style="display: none;">
+                    <div class="form-section">
+                        <h3>Temel Bilgiler</h3>
+                        <div class="form-group">
+                            <label for="kurum-adi-input">Kurum Adı:</label>
+                            <input type="text" id="kurum-adi-input" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="kurum-tipi-input">Kurum Tipi:</label>
+                            <select id="kurum-tipi-input" name="type" required>
+                                <option value="restoran">Restoran</option>
+                                <option value="magaza">Mağaza</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="kurum-logo-input">Kurum Logosu:</label>
+                            <input type="file" id="kurum-logo-input" name="profileImage" accept="image/*">
+                            <div id="logo-preview" class="image-preview"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>İletişim Bilgileri</h3>
+                        <div class="form-group">
+                            <label for="kurum-email-input">E-posta:</label>
+                            <input type="email" id="kurum-email-input" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="kurum-telefon-input">Telefon:</label>
+                            <input type="tel" id="kurum-telefon-input" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="calisma-saatleri-input">Çalışma Saatleri:</label>
+                            <input type="text" id="calisma-saatleri-input" name="openingHours" required>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Adres Bilgileri</h3>
+                        <div class="form-group">
+                            <label for="address-street">Sokak:</label>
+                            <input type="text" id="address-street" name="address.street" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address-district">İlçe:</label>
+                            <input type="text" id="address-district" name="address.district" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address-city">Şehir:</label>
+                            <input type="text" id="address-city" name="address.city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address-state">Eyalet/Bölge:</label>
+                            <input type="text" id="address-state" name="address.state">
+                        </div>
+                        <div class="form-group">
+                            <label for="address-postal">Posta Kodu:</label>
+                            <input type="text" id="address-postal" name="address.postalCode" required>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="submit-btn">Değişiklikleri Kaydet</button>
+                        <button type="button" id="cancel-edit-btn" class="cancel-btn">İptal</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Ürün Yönetimi Bölümü -->
+            <section id="urunler" class="panel-section">
+                <div class="urun-yonetimi">
+                    <h2>Ürün Yönetimi</h2>
+                    <button id="add-product-btn">Yeni Ürün Ekle</button>
+
+                    <!-- Ürün Filtreleme -->
+                    <div class="urun-filtrele">
+                        <input type="text" id="urun-ara" placeholder="Ürün Ara...">
+                        <select id="urun-sirala">
+                            <option value="yeni">En Yeni</option>
+                            <option value="eski">En Eski</option>
+                            <option value="fiyat-artan">Fiyat (Artan)</option>
+                            <option value="fiyat-azalan">Fiyat (Azalan)</option>
+                        </select>
+                    </div>
+
+                    <!-- Ürün Listesi -->
+                    <div id="menu-listesi" class="menu-listesi">
+                        <!-- Ürün kartları buraya eklenecek -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Rezervasyonlar Bölümü -->
+            <section id="rezervasyonlar" class="panel-section">
+                <div class="section-header">
+                    <h2>Rezervasyonlar</h2>
+                </div>
+
+                <div class="bagis-istatistikleri">
+                    <div class="istatistik-kart">
+                        <h3>Toplam Rezervasyon</h3>
+                        <p id="toplam-rezervasyon">0</p>
+                    </div>
+                    <div class="istatistik-kart">
+                        <h3>Bugünkü Rezervasyonlar</h3>
+                        <p id="bugun-rezervasyon">0</p>
+                    </div>
+                    <div class="istatistik-kart">
+                        <h3>Bekleyen Rezervasyonlar</h3>
+                        <p id="bekleyen-rezervasyon">0</p>
+                    </div>
+                </div>
+
+                <div class="rezervasyon-tabs">
+                    <button class="rezervasyon-tab-btn active" data-tab="bekleyen">Aktif Rezervasyonlar</button>
+                    <button class="rezervasyon-tab-btn" data-tab="onaylanan">Kullanılan Rezervasyonlar</button>
+                    <button class="rezervasyon-tab-btn" data-tab="iptal">İptal Edilen Rezervasyonlar</button>
+                </div>
+
+                <!-- Aktif Rezervasyonlar -->
+                <div id="bekleyen-rezervasyonlar" class="rezervasyon-tab-content active">
+                    <div class="rezervasyon-listesi">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Rezervasyon Tarihi</th>
+                                    <th>Öğrenci Adı</th>
+                                    <th>Rezerve Edilen Ürün</th>
+                                    <th>Kişi Sayısı</th>
+                                    <th>Saat</th>
+                                    <th>Durum</th>
+                                    <th>İşlemler</th>
+                                </tr>
+                            </thead>
+                            <tbody id="bekleyen-rezervasyonlar-body">
+                                <!-- Aktif rezervasyonlar buraya eklenecek -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Kullanılan Rezervasyonlar -->
+                <div id="onaylanan-rezervasyonlar" class="rezervasyon-tab-content">
+                    <div class="rezervasyon-listesi">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Rezervasyon Tarihi</th>
+                                    <th>Öğrenci Adı</th>
+                                    <th>Rezerve Edilen Ürün</th>
+                                    <th>Kişi Sayısı</th>
+                                    <th>Saat</th>
+                                    <th>Kullanılma Tarihi</th>
+                                    <th>Durum</th>
+                                    <th>İşlemler</th>
+                                </tr>
+                            </thead>
+                            <tbody id="onaylanan-rezervasyonlar-body">
+                                <!-- Kullanılan rezervasyonlar buraya eklenecek -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- İptal Edilen Rezervasyonlar -->
+                <div id="iptal-rezervasyonlar" class="rezervasyon-tab-content">
+                    <div class="rezervasyon-listesi">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Rezervasyon Tarihi</th>
+                                    <th>Öğrenci Adı</th>
+                                    <th>Rezerve Edilen Ürün</th>
+                                    <th>Kişi Sayısı</th>
+                                    <th>Saat</th>
+                                    <th>İptal Tarihi</th>
+                                    <th>İşlemler</th>
+                                </tr>
+                            </thead>
+                            <tbody id="iptal-rezervasyonlar-body">
+                                <!-- İptal edilen rezervasyonlar buraya eklenecek -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bağışlar Bölümü -->
+            <section id="bagislar" class="panel-section">
+                <div class="section-header">
+                    <h2>Bağışlar</h2>
+                </div>
+
+                <div class="bagis-istatistikleri">
+                    <div class="istatistik-kart">
+                        <h3>Toplam Bağış</h3>
+                        <p id="toplam-bagis">0 TL</p>
+                    </div>
+                    <div class="istatistik-kart">
+                        <h3>Bağış Sayısı</h3>
+                        <p id="bagis-sayisi">0</p>
+                    </div>
+                    <div class="istatistik-kart">
+                        <h3>Bekleyen Bağışlar</h3>
+                        <p id="bekleyen-bagis">0</p>
+                    </div>
+                </div>
+
+                <div class="bagis-tabs">
+                    <button class="tab-btn active" data-tab="bekleyen">Bekleyen Bağışlar</button>
+                    <button class="tab-btn" data-tab="onaylanan">Onaylanan Bağışlar</button>
+                    <button class="tab-btn" data-tab="iptal">İptal Edilen Bağışlar</button>
+                </div>
+
+                <div class="bagis-content">
+                    <!-- Bekleyen Bağışlar -->
+                    <div id="bekleyen-bagislar" class="bagis-tab-content active">
+                        <div class="bagis-listesi">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Bağış Tarihi</th>
+                                        <th>Bağışçı</th>
+                                        <th>Ürünler</th>
+                                        <th>Toplam Tutar</th>
+                                        <th>Durum</th>
+                                        <th>İşlemler</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="bekleyen-bagislar-body">
+                                    <!-- Bekleyen bağışlar buraya eklenecek -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Onaylanan Bağışlar -->
+                    <div id="onaylanan-bagislar" class="bagis-tab-content">
+                        <div class="bagis-listesi">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Bağış Tarihi</th>
+                                        <th>Bağışçı</th>
+                                        <th>Ürünler</th>
+                                        <th>Toplam Tutar</th>
+                                        <th>Onaylanma Tarihi</th>
+                                        <th>İşlemler</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="onaylanan-bagislar-body">
+                                    <!-- Onaylanan bağışlar buraya eklenecek -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- İptal Edilen Bağışlar -->
+                    <div id="iptal-bagislar" class="bagis-tab-content">
+                        <div class="bagis-listesi">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Bağış Tarihi</th>
+                                        <th>Bağışçı</th>
+                                        <th>Ürünler</th>
+                                        <th>Toplam Tutar</th>
+                                        <th>İptal Tarihi</th>
+                                        <th>İşlemler</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="iptal-bagislar-body">
+                                    <!-- İptal edilen bağışlar buraya eklenecek -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bağış Detay Modal -->
+                <div id="bagis-detay-modal" class="modal">
+                    <div class="modal-icerik">
+                        <div class="modal-header">
+                            <h3>Bağış Detayı</h3>
+                            <button class="close-modal">×</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="bagisci-bilgileri">
+                                <h4>Bağışçı Bilgileri</h4>
+                                <p><strong>Ad Soyad:</strong> <span id="bagisci-adsoyad"></span></p>
+                                <p><strong>E-posta:</strong> <span id="bagisci-email"></span></p>
+                            </div>
+                            <div class="bagis-urunleri">
+                                <h4>Bağışlanan Ürünler</h4>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Ürün</th>
+                                            <th>Miktar</th>
+                                            <th>Birim Fiyat</th>
+                                            <th>Toplam</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="bagis-urunleri-body">
+                                        <!-- Ürünler buraya dinamik olarak eklenecek -->
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="bagis-ozeti">
+                                <h4>Bağış Özeti</h4>
+                                <p><strong>Toplam Tutar:</strong> <span id="bagis-toplam"></span></p>
+                                <p><strong>Bağış Tarihi:</strong> <span id="bagis-tarihi"></span></p>
+                                <p><strong>Durum:</strong> <span id="bagis-durumu"></span></p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button id="bagis-onayla" class="onay-btn">Bağışı Onayla</button>
+                            <button id="bagis-iptal" class="iptal-btn">Bağışı İptal Et</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Hizmetler Bölümü -->
+            <section id="hizmetler" class="panel-section">
+                <h2>Hizmetler</h2>
+                <div class="hizmet-listesi">
+                    <!-- Hizmet kayıtları buraya eklenecek -->
+                </div>
+                <button id="add-service-btn">Yeni Hizmet Ekle</button>
+            </section>
+        </main>
+    </div>
+
+    <!-- Ürün Ekleme Modal -->
+    <div id="product-modal" class="modal">
+        <div class="modal-icerik">
+            <div class="modal-header">
+                <h3>Yeni Ürün Ekle</h3>
+                <button id="close-modal">×</button>
+            </div>
+            <form id="product-form" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="product-name">Ürün Adı:</label>
+                    <input type="text" id="product-name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="product-description">İçeriği:</label>
+                    <textarea id="product-description" name="description" rows="3" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="product-price">Fiyat (TL):</label>
+                    <input type="number" id="product-price" name="price" step="0.01" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="product-stock">Stok:</label>
+                    <input type="number" id="product-stock" name="stock" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="product-image">Ürün Görseli (Opsiyonel):</label>
+                    <input type="file" id="product-image" name="image" accept="image/*">
+                    <div id="image-preview"></div>
+                </div>
+
+                <button type="submit" class="submit-btn">Ürünü Ekle</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Hizmet Ekleme Modal -->
+    <div id="service-modal" class="modal">
+        <div class="modal-icerik">
+            <div class="modal-header">
+                <h3>Yeni Hizmet Ekle</h3>
+                <button id="close-service-modal">×</button>
+            </div>
+            <form id="service-form">
+                <div class="form-group">
+                    <label for="service-type">Hizmet Türü:</label>
+                    <input type="text" id="service-type" name="serviceType" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="service-description">Hizmet Açıklaması:</label>
+                    <textarea id="service-description" name="description" rows="3" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Hizmeti Ekle</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Rezervasyon Detay Modal -->
+    <div id="rezervasyon-detay-modal" class="modal">
+        <div class="modal-icerik">
+            <div class="modal-header">
+                <h3>Rezervasyon Detayı</h3>
+                <button class="close-modal">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="musteri-bilgileri">
+                    <h4>Öğrenci Bilgileri</h4>
+                    <p><strong>Ad Soyad:</strong> <span id="musteri-adsoyad"></span></p>
+                    <p><strong>Telefon:</strong> <span id="musteri-telefon"></span></p>
+                    <p><strong>E-posta:</strong> <span id="musteri-email"></span></p>
+                </div>
+                <div class="urun-bilgileri">
+                    <h4>Ürün Bilgileri</h4>
+                    <p><strong>Ürün Adı:</strong> <span id="urun-adi"></span></p>
+                    <p><strong>Miktar:</strong> <span id="urun-miktar"></span></p>
+                    <p><strong>Fiyat:</strong> <span id="urun-fiyat"></span></p>
+                </div>
+                <div class="rezervasyon-detaylari">
+                    <h4>Rezervasyon Detayları</h4>
+                    <p><strong>Rezervasyon Tarihi:</strong> <span id="rezervasyon-tarihi"></span></p>
+                    <p><strong>Saat:</strong> <span id="rezervasyon-saati"></span></p>
+                    <p><strong>Kişi Sayısı:</strong> <span id="kisi-sayisi"></span></p>
+                    <p><strong>Özel Not:</strong> <span id="rezervasyon-notu"></span></p>
+                    <p><strong>Durum:</strong> <span id="rezervasyon-durumu"></span></p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="rezervasyon-onayla" class="onay-btn">Rezervasyonu Onayla</button>
+                <button id="rezervasyon-iptal" class="iptal-btn">Rezervasyonu İptal Et</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rezervasyon Doğrulama Modal -->
+    <div id="rezervasyon-dogrulama-modal" class="modal">
+        <div class="modal-icerik">
+            <div class="modal-header">
+                <h3>Rezervasyon Doğrulama</h3>
+                <button class="close-modal">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="verification-warning" style="color: red;">
+                    Lütfen öğrenci kartını kontrol etmeyi unutmayınız!
+                </div>
+                <div class="form-group">
+                    <label for="verification-code">Doğrulama Kodu:</label>
+                    <input type="text" id="verification-code" placeholder="Doğrulama kodunu giriniz" required>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="dogrulama-onayla" class="onay-btn">Doğrula</button>
+                <button id="dogrulama-iptal" class="iptal-btn">İptal</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../public/js/panel.js"></script>
+</body>
+</html>

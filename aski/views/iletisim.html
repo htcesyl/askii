@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="../public/css/iletisim.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <title>İletişim - Askıda İyilik Var</title>
+</head>
+<body>
+    <!-- Topbar -->
+    <div class="topbar">
+        <!-- Sol Taraf: Logo ve site ismi -->
+        <div class="left">
+            <div class="logo-container">
+                <img src="../public/image/logo.png" alt="Site Icon" class="site-icon">
+                <a href="index.html" class="donate-text">askıda iyilik var</a>
+            </div>
+        </div>
+
+        <!-- Hamburger Menü -->
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <!-- Orta Kısım: Menü bağlantıları -->
+        <div class="center-links" id="menuLinks">
+            <a href="hakkimizda.html" class="nav-link">Hakkımızda</a>
+            <a href="nasil-calisir.html" class="nav-link">Nasıl Çalışır?</a>
+            <a href="iletisim.html" class="nav-link">İletişim</a>
+            <a href="sss.html" class="nav-link">SSS</a>
+            <!-- Mobil için giriş butonları -->
+            <div class="mobile-auth-buttons">
+                <a href="bagiscigiris.html" class="auth-btn bagisci-btn">Bağışçı Girişi</a>
+                <a href="isletmegiris.html" class="auth-btn isletme-btn">İşletme Girişi</a>
+            </div>
+        </div>
+
+        <!-- Sağ Taraf: Giriş butonları -->
+        <div class="right">
+            <div class="auth-buttons">
+                <a href="bagiscigiris.html" class="auth-btn bagisci-btn">Bağışçı Girişi</a>
+                <a href="isletmegiris.html" class="auth-btn isletme-btn">İşletme Girişi</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- İletişim Sayfası İçeriği -->
+    <div class="contact-page">
+        <div class="contact-header">
+            <h1>İletişime Geçin</h1>
+            <p>Sorularınız ve önerileriniz için bizimle iletişime geçebilirsiniz.</p>
+        </div>
+
+        <!-- İki sütunluk form yapısı -->
+        <div class="form-container">
+            <!-- Sol sütun: İletişim Formu -->
+            <div class="form-section">
+                <h2>İletişim Formu</h2>
+                <p class="mandatory-text">* Zorunlu alanları doldurunuz.</p>
+                
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Ad Soyad *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-posta *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Telefon *</label>
+                        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Mesajınız *</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Gönder</button>
+                </form>
+            </div>
+
+            <!-- Sağ sütun: İletişim Bilgileri -->
+            <div class="contact-info">
+                <h2>İletişim Bilgilerimiz</h2>
+                <p class="info-description">İletişim için projenin kurucusu Meal Box ile iletişime geçebilirsiniz.</p>
+                
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="info-content">
+                        <h3>Adres</h3>
+                        <p>Barbaros Mah. Begonya Sok. Nida Kule Ataşehir Batı No:1/2<br>
+                        Ataşehir, İstanbul</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div class="info-content">
+                        <h3>Telefon</h3>
+                        <p>0850 532 60 62<br>0216 324 81 37</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div class="info-content">
+                        <h3>E-posta</h3>
+                        <p>destek@mealbox.com.tr</p>
+                    </div>
+                </div>
+
+                <div class="social-media">
+                    <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../public/js/main.js"></script>
+</body>
+</html>

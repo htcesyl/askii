@@ -1,0 +1,127 @@
+.settings-container {
+    max-width: 800px;
+    margin: 100px auto 50px;
+    padding: 0 20px;
+}
+
+.settings-container h1 {
+    color: #399918;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 32px;
+}
+
+.settings-section {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.settings-section h2 {
+    color: #399918;
+    font-size: 24px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.settings-section h2 i {
+    font-size: 20px;
+}
+
+.settings-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    color: #333;
+    font-weight: 500;
+}
+
+.form-group input:not([type="checkbox"]) {
+    padding: 12px 15px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #399918;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(57, 153, 24, 0.1);
+}
+
+.checkbox-group {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #399918;
+}
+
+.save-btn {
+    background: #399918;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+    margin-top: 10px;
+}
+
+.save-btn:hover {
+    background: #2d7513;
+    transform: translateY(-2px);
+}
+
+/* Responsive tasarım */
+@media screen and (max-width: 768px) {
+    .settings-container {
+        margin: 80px auto 40px;
+    }
+
+    .settings-section {
+        padding: 20px;
+    }
+
+    .settings-section h2 {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .settings-container {
+        margin: 60px auto 30px;
+    }
+
+    .form-group input:not([type="checkbox"]) {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .save-btn {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+    }
+} 

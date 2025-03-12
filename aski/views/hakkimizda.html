@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="../public/css/hakkimizda.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <title>Hakkımızda - Askıda İyilik Var</title>
+</head>
+
+<body>
+    <div class="topbar">
+        <!-- Sol Taraf: Logo ve site ismi -->
+        <div class="left">
+            <div class="logo-container">
+                <img src="../public/image/logo.png" alt="Site Icon" class="site-icon">
+                <a href="index.html" class="donate-text">askıda iyilik var</a>
+            </div>
+        </div>
+
+        <!-- Hamburger Menü -->
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <!-- Orta Kısım: Menü bağlantıları -->
+        <div class="center-links" id="menuLinks">
+            <a href="hakkimizda.html" class="nav-link">Hakkımızda</a>
+            <a href="nasil-calisir.html" class="nav-link">Nasıl Çalışır?</a>
+            <a href="iletisim.html" class="nav-link">İletişim</a>
+            <a href="sss.html" class="nav-link">SSS</a>
+            <!-- Mobil için giriş butonları -->
+            <div class="mobile-auth-buttons">
+                <a href="bagiscigiris.html" class="auth-btn bagisci-btn">Bağışçı Girişi</a>
+                <a href="isletmegiris.html" class="auth-btn isletme-btn">İşletme Girişi</a>
+            </div>
+        </div>
+
+        <!-- Sağ Taraf: Giriş butonları -->
+        <div class="right">
+            <div class="auth-buttons">
+                <a href="bagiscigiris.html" class="auth-btn bagisci-btn">Bağışçı Girişi</a>
+                <a href="isletmegiris.html" class="auth-btn isletme-btn">İşletme Girişi</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Üstteki fotoğraf ve başlık -->
+    <div class="about-header">
+        <img src="../public/image/araba.jpg" alt="Hakkımızda Fotoğrafı" class="header-image">
+        <div class="header-text">
+            <h1>Hakkımızda</h1>
+        </div>
+    </div>
+
+    <!-- İçerik kısmı -->
+    <div class="about-content">
+        <h2>Askıda İyilik Nedir?</h2>
+        <p>Askıda İyilik Projesi, toplumsal dayanışmayı artırmayı hedefleyen bir sosyal sorumluluk platformudur. 
+        Ekonomik durumu yetersiz öğrencilere çeşitli hizmetler sunarak onların yaşam kalitelerini artırmayı amaçlar.</p>
+
+        <div class="mission-vision-container">
+            <div class="mission-card">
+                <i class="fas fa-bullseye card-icon"></i>
+                <h2>Misyonumuz</h2>
+                <p>Misyonumuz, ekonomik zorluklar yaşayan öğrencilere ulaşarak onların temel ihtiyaçlarını karşılamaya destek olmak ve toplumda dayanışma ruhunu yaymaktır.</p>
+            </div>
+
+            <div class="vision-card">
+                <i class="fas fa-eye card-icon"></i>
+                <h2>Vizyonumuz</h2>
+                <p>Vizyonumuz, Askıda İyilik Projesi'ni Türkiye genelinde yaygınlaştırarak, herkesin birbirine yardım edebileceği bir dayanışma ağı kurmaktır.</p>
+            </div>
+        </div>
+
+        <h2>Nasıl Çalışıyoruz?</h2>
+        <p>Öğrenciler, yemek, kıyafet ve sosyal etkinlik gibi alanlarda doğrudan destek alabilirler. 
+        Bağışlar, öğrencilerin ihtiyaçlarına göre doğrudan onlara ulaşır. 
+        Bu proje, öğrencilere daha iyi bir yaşam sunmak için tasarlanmıştır. 
+        Toplumun her kesiminden destek beklemektedir.</p>
+    </div>
+
+    <script src="../public/js/main.js"></script>
+</body>
+
+</html>

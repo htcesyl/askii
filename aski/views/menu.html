@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Askıda İyilik Var - Menü</title>
+  <link rel="stylesheet" href="../public/css/menu.css">
+  <link rel="stylesheet" href="../public/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <!-- Topbar -->
+  <div class="topbar">
+    <!-- Sol Taraf: Logo ve site ismi -->
+    <div class="left">
+      <div class="logo-container">
+        <img src="../public/image/logo.png" alt="Site Icon" class="site-icon">
+        <a href="anasayfa.html" class="donate-text">askıda iyilik var</a>
+      </div>
+    </div>
+
+    <!-- Hamburger Menü -->
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <!-- Orta Kısım: Menü bağlantıları -->
+    <div class="center-links" id="menuLinks">
+      <a href="hakkimizda.html" class="nav-link">Hakkımızda</a>
+      <a href="nasil-calisir.html" class="nav-link">Nasıl Çalışır?</a>
+      <a href="iletisim.html" class="nav-link">İletişim</a>
+      <a href="sss.html" class="nav-link">SSS</a>
+    </div>
+
+    <!-- Sağ Taraf: Profil Menüsü -->
+    <div class="right">
+      <div class="profile-section">
+        <div class="profile-dropdown">
+          <a href="javascript:void(0);" class="profile-btn" id="profileBtn">
+            Profilim <i class="fa fa-user-circle"></i>
+          </a>
+          <div class="dropdown-content">
+            <div class="user-info">
+              <span id="userName"></span>
+              <span id="userEmail"></span>
+            </div>
+            <a href="previous-donations.html"><i class="fa fa-history"></i> Önceki Bağışlarım</a>
+            <a href="settings.html"><i class="fa fa-cog"></i> Ayarlar</a>
+            <a href="#" onclick="handleLogout()"><i class="fa fa-sign-out-alt"></i> Çıkış Yap</a>
+          </div>
+        </div>
+        <a href="payment.html" class="cart-btn">
+          <i class="fas fa-shopping-cart"></i>
+          Sepetim
+          <span class="cart-count" id="cartCount">0</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- İşletme Bilgileri -->
+  <section class="institution-info">
+    <div class="institution-header">
+      <div class="institution-details">
+        <img id="institutionImage" src="../public/image/logo.png" alt="İşletme Logosu">
+        <div class="text-content">
+          <h1 id="institutionName"></h1>
+          <div class="info-rows">
+            <div class="info-row">
+              <span class="info-label"><i class="fas fa-map-marker-alt"></i> Adres:</span>
+              <span id="institutionAddress" class="info-value"></span>
+            </div>
+            <div class="info-row">
+              <span class="info-label"><i class="fas fa-clock"></i> Çalışma Saatleri:</span>
+              <span id="institutionHours" class="info-value"></span>
+            </div>
+            <div class="info-row">
+              <span class="info-label"><i class="fas fa-phone"></i> Telefon:</span>
+              <span id="institutionPhone" class="info-value"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ana İçerik -->
+  <div class="container">
+    <!-- Sol Menü Bölümü -->
+    <div class="menu-section">
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Menüde ara...">
+        <i class="fas fa-search"></i>
+      </div>
+      <div id="menuItems" class="menu-items">
+        <!-- Menü öğeleri buraya dinamik olarak eklenecek -->
+      </div>
+    </div>
+
+    <!-- Sağ Sepet Bölümü -->
+    <div class="cart-section">
+      <div class="cart-header">
+        <h2><i class="fas fa-shopping-basket"></i> Sepetim</h2>
+      </div>
+      <div id="cartItems" class="cart-items">
+        <div class="empty-cart">
+          <i class="fas fa-shopping-basket"></i>
+          <p>Sepetiniz boş</p>
+        </div>
+      </div>
+      <div class="cart-summary">
+        <div class="total-row">
+          <span>Toplam Tutar:</span>
+          <span id="totalPrice">0.00 TL</span>
+        </div>
+        <button id="checkout" onclick="checkout()">
+          <i class="fas fa-heart"></i> Bağış Yap
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../public/js/menu.js"></script>
+  <script src="../public/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async function() {
+      checkSession(); // Add this line to initialize cart
+    });
+  </script>
+</body>
+</html>

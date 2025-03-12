@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İşletme Girişi ve Kayıt</title>
+    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="../public/css/isletmegiris.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <script>
+        // Oturum kontrolü
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
+        if (isLoggedIn) {
+            // Kullanıcı zaten giriş yapmışsa anasayfaya yönlendir
+            window.location.href = 'anasayfa.html';
+        }
+    </script>
+
+    <!-- Topbar -->
+    <div class="topbar">
+        <!-- Sol Taraf: Logo ve site ismi -->
+        <div class="left">
+            <div class="logo-container">
+                <img src="../public/image/logo.png" alt="Site Icon" class="site-icon">
+                <a href="index.html" class="donate-text">askıda iyilik var</a>
+            </div>
+        </div>
+
+        <!-- Hamburger Menü -->
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <!-- Orta Kısım: Menü bağlantıları -->
+        <div class="center-links" id="menuLinks">
+            <a href="hakkimizda.html" class="nav-link">Hakkımızda</a>
+            <a href="nasil-calisir.html" class="nav-link">Nasıl Çalışır?</a>
+            <a href="iletisim.html" class="nav-link">İletişim</a>
+            <a href="sss.html" class="nav-link">SSS</a>
+        </div>
+
+        <!-- Sağ Taraf: Giriş butonları -->
+        <div class="right">
+            <div class="auth-buttons">
+                <a href="bagiscigiris.html" class="auth-btn bagisci-btn">Bağışçı Girişi</a>
+                <a href="isletmegiris.html" class="auth-btn isletme-btn">İşletme Girişi</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mevcut form içeriği buradan devam eder -->
+    <div class="container">
+        <!-- Giriş Formu -->
+        <div class="form-box login-box">
+            <form id="loginForm">
+                <h2>İŞLETME GİRİŞİ</h2>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="E-posta" class="txt" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" placeholder="Şifre" class="txt" required>
+                </div>
+                <input type="submit" value="Giriş Yap" class="giris-btn">
+            </form>
+        </div>
+
+        <!-- Kayıt Formu -->
+        <div class="form-box signup-box">
+            <form id="registerForm">
+                <h2>İŞLETME KAYIT</h2>
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="İşletme Adı" class="txt" required>
+                </div>
+                <div class="form-group">
+                    <select name="type" class="txt" required>
+                        <option value="">İşletme Türü Seçin</option>
+                        <option value="restoran">Restoran</option>
+                        <option value="magaza">Mağaza</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="İşletme E-posta" class="txt" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" name="phone" placeholder="Telefon Numarası" class="txt" 
+                           pattern="[0-9]{10}" maxlength="10" 
+                           title="Telefon numarası 10 haneli olmalıdır" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" placeholder="Şifre" class="txt" 
+                           minlength="6" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="passwordConfirm" placeholder="Şifre (Tekrar)" class="txt" 
+                           minlength="6" required>
+                </div>
+                <input type="submit" value="Kayıt Ol" class="signup-btn">
+            </form>
+        </div>
+    </div>
+
+    <script src="../public/js/main.js"></script>
+    <script src="../public/js/isletmegiris.js"></script>
+</body>
+</html>

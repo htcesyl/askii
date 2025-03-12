@@ -1,0 +1,575 @@
+/* Genel Stil */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+
+
+
+
+
+/* İşletme Bilgileri */
+.institution-info {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../image/araba.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 40px 20px;
+    margin-bottom: 0;
+    margin-top: 60px;
+    position: relative;
+}
+
+.institution-header {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.institution-details {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.institution-details img {
+    width: 150px;
+    height: 150px;
+    border-radius: 15px;
+    object-fit: cover;
+    border: 4px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    flex-shrink: 0;
+}
+
+.text-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.text-content h1 {
+    margin: 0;
+    font-size: 42px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+}
+
+.info-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px 15px;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+}
+
+.info-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    min-width: 180px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.info-label i {
+    width: 20px;
+    text-align: center;
+    font-size: 16px;
+    color: #E27396;
+}
+
+.info-value {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 15px;
+    flex-grow: 1;
+    line-height: 1.4;
+}
+
+/* Ana İçerik */
+.container {
+    display: flex;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Menü Bölümü */
+.menu-section {
+    flex: 1;
+    padding: 20px;
+}
+
+.search-bar {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 12px 40px 12px 15px;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.search-bar i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+}
+
+.menu-items {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.menu-item {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+}
+
+.item-image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.stock-label {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: 500;
+    z-index: 1;
+}
+
+.item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.item-image:hover img {
+    transform: scale(1.05);
+}
+
+.item-details {
+    padding: 15px;
+}
+
+.item-details h3 {
+    margin: 0 0 10px 0;
+    color: #333;
+    font-size: 18px;
+}
+
+.description {
+    color: #666;
+    font-size: 14px;
+    margin: 0 0 15px 0;
+    line-height: 1.4;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: 600;
+    color: #399918;
+}
+
+.price-row button {
+    background-color: #399918;
+    color: white;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.price-row button:hover {
+    background-color: #2d7a12;
+    transform: scale(1.1);
+}
+
+/* Sepet Bölümü */
+.cart-section {
+    width: 350px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    align-self: flex-start;
+    position: sticky;
+    top: 30px;
+}
+
+.cart-header {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-header h2 {
+    margin: 0;
+    color: #333;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cart-items {
+    padding: 20px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.empty-cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    color: #718096;
+    text-align: center;
+}
+
+.empty-cart i {
+    font-size: 48px;
+    margin-bottom: 15px;
+    opacity: 0.5;
+}
+
+.empty-cart p {
+    font-size: 16px;
+    margin: 0;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.item-info {
+    flex: 1;
+}
+
+.item-info h4 {
+    margin: 0 0 5px 0;
+    color: #333;
+    font-size: 15px;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.quantity-controls button {
+    background: none;
+    border: none;
+    color: #399918;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.quantity-controls button:hover {
+    background-color: rgba(57, 153, 24, 0.1);
+}
+
+.quantity-input {
+    width: 50px;
+    text-align: center;
+    padding: 4px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.quantity-input:focus {
+    outline: none;
+    border-color: #399918;
+    box-shadow: 0 0 0 2px rgba(57, 153, 24, 0.1);
+}
+
+.delete-btn {
+    color: #E27396 !important;
+}
+
+.delete-btn:hover {
+    background-color: rgba(226, 115, 150, 0.1) !important;
+}
+
+.cart-summary {
+    padding: 20px;
+    border-top: 1px solid #eee;
+    background-color: #f8f9fa;
+    border-radius: 0 0 12px 12px;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #333;
+}
+
+#checkout {
+    width: 100%;
+    padding: 12px;
+    background-color: #399918;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+#checkout:hover {
+    background-color: #2d7a12;
+}
+
+#checkout:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .cart-section {
+        width: 100%;
+        position: static;
+    }
+
+    .menu-items {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .institution-details {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .info-row {
+        justify-content: center;
+    }
+
+    .menu-items {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .category-list {
+        padding: 10px;
+    }
+
+    .category-btn {
+        padding: 6px 15px;
+        font-size: 14px;
+    }
+
+    .cart-section {
+        margin: 0 -20px;
+        border-radius: 0;
+    }
+}
+
+/* Sepet grupları için stiller */
+.cart-group {
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.cart-group:last-child {
+    margin-bottom: 0;
+}
+
+.cart-group-header {
+    background-color: #e2e8f0;
+    color: #1a202c;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 12px 15px;
+    border-bottom: 1px solid #cbd5e0;
+}
+
+/* Sepet öğeleri için stiller */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #edf2f7;
+    transition: background-color 0.2s;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item:hover {
+    background-color: #f8fafc;
+}
+
+.item-info {
+    flex: 1;
+    margin-right: 15px;
+}
+
+.item-info h4 {
+    color: #2d3748;
+    font-size: 15px;
+    font-weight: 500;
+    margin: 0 0 5px 0;
+}
+
+.item-details {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.item-details .price {
+    color: #399918;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #f8fafc;
+    padding: 4px;
+    border-radius: 6px;
+}
+
+.quantity-controls button {
+    background: none;
+    border: none;
+    color: #399918;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 4px;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+}
+
+.quantity-controls button:hover {
+    background-color: #edf2f7;
+}
+
+.quantity-input {
+    width: 40px;
+    text-align: center;
+    padding: 4px;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: white;
+}
+
+.quantity-input:focus {
+    outline: none;
+    border-color: #399918;
+    box-shadow: 0 0 0 2px rgba(57, 153, 24, 0.1);
+}
+
+.delete-btn {
+    color: #e53e3e !important;
+}
+
+.delete-btn:hover {
+    background-color: #fff5f5 !important;
+}
+
+/* Sepet özeti */
+.cart-summary {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f8fafc;
+    border-radius: 10px;
+    border-top: 1px solid #edf2f7;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #2d3748;
+}
+
+.total-row .total-price {
+    font-weight: 600;
+    color: #399918;
+}
+  

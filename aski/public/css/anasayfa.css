@@ -1,0 +1,372 @@
+
+/* Form Grupları */
+.form-group {
+    margin: 15px 0;
+    text-align: center;
+}
+
+.form-group label {
+    display: block;
+    color: white;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.dropdown {
+    width: 200px;
+    padding: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dropdown:hover {
+    border-color: #399918;
+}
+
+.dropdown:focus {
+    outline: none;
+    border-color: #399918;
+    box-shadow: 0 0 0 2px rgba(57, 153, 24, 0.2);
+}
+
+/* Overlay ayarları */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    display: none;
+}
+
+/* JavaScript ile açılan dropdown için aktif durumu */
+.profile-dropdown.active .dropdown-content {
+    display: block;
+}
+
+
+
+/* Hero section ayarları */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../image/araba.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-top: 70px;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.main-heading {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #ECFFE6;
+}
+
+.sub-heading {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #FF7777;
+}
+
+.description {
+    font-size: 18px;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    color: #ECFFE6;
+}
+
+/* İl ve İlçe Seçimi */
+.location-selector {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.dropdown {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.donate-btn {
+    background: #399918;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.donate-btn:hover {
+    background: #2d7513;
+    transform: translateY(-2px);
+}
+
+/* Özellikler Bölümü */
+.features {
+    padding: 80px 0;
+    background: #f8f9fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.feature-box {
+    flex: 1;
+    text-align: center;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.feature-box:hover {
+    transform: translateY(-10px);
+}
+
+.icon-container {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background: #ECFFE6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-container i {
+    font-size: 35px;
+    color: #399918;
+}
+
+/* Mobil Uygulama Bölümü */
+.app-section {
+    background: #399918;
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.app-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.qr-container {
+    margin: 30px 0;
+}
+
+.qr-code {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+.store-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.store-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 25px;
+    background: white;
+    color: #399918;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.store-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Hakkımızda Bölümü */
+.about-section {
+    padding: 80px 0;
+    background: #ECFFE6;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.about-content h2 {
+    color: #399918;
+    margin-bottom: 30px;
+}
+
+.about-content p {
+    line-height: 1.8;
+    color: #333;
+}
+
+/* Footer */
+.footer {
+    background: #FF7777;
+    color: white;
+    padding: 50px 0 20px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-info h4 {
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+}
+
+.social-links a {
+    color: white;
+    font-size: 24px;
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive Tasarım */
+@media screen and (max-width: 768px) {
+    .main-heading {
+        font-size: 36px;
+    }
+
+    .sub-heading {
+        font-size: 28px;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .main-heading {
+        font-size: 28px;
+    }
+
+    .sub-heading {
+        font-size: 24px;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+
+    .store-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/*restoran gözükmesi için*/
+#restaurant-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.restaurant-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    width: calc(33.333% - 20px);
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.restaurant-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.restaurant-card p {
+    font-size: 14px;
+    margin: 5px 0;
+}

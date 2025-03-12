@@ -1,0 +1,278 @@
+/* Genel stiller */
+.about-header {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    margin-top: 70px;
+}
+
+.header-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.about-header:hover .header-image {
+    transform: scale(1.15);
+}
+
+.header-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.header-text h1 {
+    color: #ECFFE6;
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+}
+
+.header-text h1::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: #399918;
+    border-radius: 2px;
+}
+
+/* Overlay efekti */
+.about-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.3) 0%,
+        rgba(0, 0, 0, 0.5) 100%
+    );
+    z-index: 1;
+}
+
+/* SSS Konteyneri */
+.faq-container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+/* SSS Kutuları */
+.faq-box {
+    background: white;
+    border: 2px solid #ECFFE6;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.faq-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(57, 153, 24, 0.15);
+}
+
+/* Soru başlığı */
+.faq-title {
+    padding: 20px 25px;
+    background: #ECFFE6;
+    color: #399918;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    gap: 20px;
+}
+
+.faq-title span {
+    flex: 1;
+}
+
+.faq-box:hover .faq-title {
+    background: #399918;
+    color: #ECFFE6;
+}
+
+/* Ok ikonu */
+.fa-chevron-down {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+    color: #399918;
+    min-width: 20px;
+    text-align: center;
+}
+
+.faq-box:hover .fa-chevron-down {
+    color: #ECFFE6;
+}
+
+.faq-box.active .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+/* Cevap içeriği */
+.faq-content {
+    padding: 0 25px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    color: #666;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.faq-box.active .faq-content {
+    padding: 20px 25px;
+    max-height: 1000px;
+}
+
+/* Animasyonlar */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.faq-box.active .faq-content {
+    animation: slideDown 0.3s ease-out;
+}
+
+/* Responsive tasarım */
+@media screen and (max-width: 768px) {
+    .about-header {
+        height: 300px;
+    }
+
+    .header-text h1 {
+        font-size: 36px;
+    }
+
+    .header-text h1::after {
+        width: 80px;
+        bottom: -12px;
+    }
+
+    .faq-container {
+        padding: 0 15px;
+        margin: 30px auto;
+    }
+
+    .faq-title {
+        padding: 15px 20px;
+        font-size: 16px;
+    }
+
+    .faq-content {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .faq-box.active .faq-content {
+        padding: 15px 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .about-header {
+        height: 250px;
+    }
+
+    .header-text h1 {
+        font-size: 28px;
+    }
+
+    .header-text h1::after {
+        width: 60px;
+        bottom: -10px;
+    }
+
+    .faq-container {
+        margin: 20px auto;
+    }
+
+    .faq-title {
+        padding: 12px 15px;
+        font-size: 15px;
+    }
+
+    .fa-chevron-down {
+        font-size: 16px;
+    }
+
+    .faq-box.active .faq-content {
+        padding: 12px 15px;
+    }
+}
+
+/* Hover efektleri */
+.faq-box {
+    position: relative;
+    overflow: hidden;
+}
+
+.faq-box::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: #399918;
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.faq-box:hover::before,
+.faq-box.active::before {
+    transform: scaleY(1);
+}
+
+/* Aktif durum stilleri */
+.faq-box.active {
+    border-color: #399918;
+}
+
+.faq-box.active .faq-title {
+    background: #399918;
+    color: #ECFFE6;
+}
+
+.faq-box.active .fa-chevron-down {
+    color: #ECFFE6;
+}
+
+/* Animasyon gecikmesi */
+.faq-box:nth-child(1) { animation-delay: 0.1s; }
+.faq-box:nth-child(2) { animation-delay: 0.2s; }
+.faq-box:nth-child(3) { animation-delay: 0.3s; }
+.faq-box:nth-child(4) { animation-delay: 0.4s; }
+.faq-box:nth-child(5) { animation-delay: 0.5s; }

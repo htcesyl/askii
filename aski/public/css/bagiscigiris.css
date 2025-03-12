@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: url('../image/araba.jpg') no-repeat center center / cover;
+    background-size: cover;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 100px 50px;
+    gap: 30px;
+    min-height: calc(100vh - 70px);
+    background: linear-gradient(135deg, #ECFFE6 0%, #ffffff 100%);
+}
+
+.form-box {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    max-width: 100%;
+}
+
+.form-box h2 {
+    color: #399918;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.txt {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 8px 0;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.txt:focus {
+    border-color: #399918;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(57, 153, 24, 0.1);
+}
+
+.giris-btn, .signup-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.giris-btn {
+    background-color: #399918;
+    color: white;
+}
+
+.signup-btn {
+    background-color: #399918;
+    color: white;
+}
+
+.giris-btn:hover {
+    background-color: #2d7513;
+    transform: translateY(-2px);
+}
+
+.signup-btn:hover {
+    background-color: #2d7513;
+    transform: translateY(-2px);
+}
+
+.message {
+    text-align: center;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        padding: 80px 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 80px 20px;
+    }
+
+    .form-box {
+        width: 100%;
+        max-width: 500px;
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 60px 15px;
+    }
+
+    .form-box {
+        padding: 25px;
+    }
+
+    .form-box h2 {
+        font-size: 20px;
+    }
+
+    .txt {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+
+    .giris-btn, .signup-btn {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-box {
+    animation: fadeIn 0.5s ease-out;
+}
+
+

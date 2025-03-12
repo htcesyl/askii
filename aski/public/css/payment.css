@@ -1,0 +1,336 @@
+/* Genel stiller */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    min-height: 100vh;
+}
+
+/* Topbar */
+.topbar {
+    background-color: #fff;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #2d3748;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: opacity 0.2s;
+}
+
+.logo a:hover {
+    opacity: 0.8;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 1rem;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.user-info span {
+    color: #4a5568;
+}
+
+.logout-btn {
+    background-color: #e53e3e;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+    font-size: 0.9rem;
+}
+
+.logout-btn:hover {
+    background-color: #c53030;
+    transform: translateY(-1px);
+}
+
+/* Ana içerik */
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.payment-section {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 2rem;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Sipariş özeti */
+.order-summary {
+    padding: 1.5rem;
+    background-color: #f8fafc;
+    border-radius: 0.75rem;
+    border: 1px solid #e2e8f0;
+}
+
+.order-summary h2 {
+    color: #1a202c;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+/* İşletme grupları için stiller */
+.institution-group {
+    margin-bottom: 1.5rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    background-color: white;
+}
+
+.institution-group:last-child {
+    margin-bottom: 0;
+}
+
+.institution-header {
+    background-color: #e2e8f0;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #cbd5e0;
+}
+
+.institution-header h3 {
+    margin: 0;
+    color: #1a202c;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+    transition: background-color 0.2s;
+}
+
+.order-item:last-child {
+    border-bottom: none;
+}
+
+.order-item:hover {
+    background-color: #f8fafc;
+}
+
+.item-details {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.item-name {
+    color: #2d3748;
+    font-weight: 500;
+}
+
+.item-quantity {
+    color: #718096;
+    font-size: 0.875rem;
+    background-color: #edf2f7;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.375rem;
+}
+
+.item-price {
+    color: #2d3748;
+    font-weight: 600;
+}
+
+.total-amount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: #e2e8f0;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    color: #1a202c;
+    font-size: 1.125rem;
+}
+
+/* Ödeme formu */
+.payment-form {
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 0.75rem;
+    border: 1px solid #e2e8f0;
+}
+
+.payment-form h2 {
+    color: #1a202c;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    color: #4a5568;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: all 0.2s;
+    background-color: #f8fafc;
+}
+
+.form-group input:hover {
+    border-color: #cbd5e0;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #4299e1;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.15);
+    background-color: white;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.back-button {
+    padding: 0.75rem 1.5rem;
+    background-color: #718096;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.back-button:hover {
+    background-color: #4a5568;
+    transform: translateY(-1px);
+}
+
+.pay-button {
+    flex: 1;
+    padding: 0.75rem 1.5rem;
+    background-color: #48bb78;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.2s;
+    box-shadow: 0 2px 4px rgba(72, 187, 120, 0.2);
+}
+
+.pay-button:hover {
+    background-color: #38a169;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(72, 187, 120, 0.3);
+}
+
+.pay-button:disabled {
+    background-color: #9ae6b4;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Responsive tasarım */
+@media (max-width: 768px) {
+    .payment-section {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .back-button {
+        order: 2;
+    }
+
+    .pay-button {
+        order: 1;
+    }
+}
+
+/* Animasyonlar */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.payment-section {
+    animation: fadeIn 0.3s ease-out;
+} 

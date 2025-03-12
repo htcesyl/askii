@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Askıda İyilik Var - İşletmeler</title>
+    <link rel="stylesheet" href="../public/css/restaurants.css">
+    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Topbar -->
+    <div class="topbar">
+        <!-- Sol Taraf: Logo ve site ismi -->
+        <div class="left">
+            <div class="logo-container">
+                <img src="../public/image/logo.png" alt="Site Icon" class="site-icon">
+                <a href="anasayfa.html" class="donate-text">askıda iyilik var</a>
+            </div>
+        </div>
+
+        <!-- Hamburger Menü -->
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <!-- Orta Kısım: Menü bağlantıları -->
+        <div class="center-links" id="menuLinks">
+            <a href="hakkimizda.html" class="nav-link">Hakkımızda</a>
+            <a href="nasil-calisir.html" class="nav-link">Nasıl Çalışır?</a>
+            <a href="iletisim.html" class="nav-link">İletişim</a>
+            <a href="sss.html" class="nav-link">SSS</a>
+        </div>
+
+        <!-- Sağ Taraf: Profil Menüsü -->
+        <div class="right">
+            <div class="profile-section">
+                <div class="profile-dropdown">
+                    <a href="javascript:void(0);" class="profile-btn" id="profileBtn">
+                        Profilim <i class="fa fa-user-circle"></i>
+                    </a>
+                    <div class="dropdown-content">
+                        <div class="user-info">
+                            <span id="userName"></span>
+                            <span id="userEmail"></span>
+                        </div>
+                        <a href="previous-donations.html"><i class="fa fa-history"></i> Önceki Bağışlarım</a>
+                        <a href="settings.html"><i class="fa fa-cog"></i> Ayarlar</a>
+                        <a href="#" onclick="handleLogout()"><i class="fa fa-sign-out-alt"></i> Çıkış Yap</a>
+                    </div>
+                </div>
+                <a href="payment.html" class="cart-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                    Sepetim
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Başlık ve Arkaplan -->
+    <section class="header-section">
+        <div class="background-overlay">
+            <h1 id="city-title"></h1>
+        </div>
+    </section>
+
+    <!-- Filtreleme Bölümü -->
+    <div class="filter-section">
+        <select id="typeFilter" onchange="filterInstitutions()">
+            <option value="all">Tüm İşletmeler</option>
+            <option value="restoran">Sadece Restoranlar</option>
+            <option value="magaza">Sadece Mağazalar</option>
+        </select>
+    </div>
+
+    <!-- İşletme Listesi -->
+    <section class="restaurant-container" id="institutionContainer">
+        <!-- İşletmeler dinamik olarak buraya eklenecek -->
+    </section>
+
+    <script src="../public/js/main.js"></script>
+    <script>
+        let allInstitutions = []; // Tüm kurumları saklayacak global değişken
+
+        // İşletmeleri görüntüleme fonksiyonu
+        function displayInstitutions(institutions) {
+            const container = document.getElementById('institutionContainer');
+            
+            if (institutions.length === 0) {
+                container.innerHTML = `
+                    <div class="no-results">
+                        <h3>Bu bölgede henüz işletme bulunmamaktadır.</h3>
+                        <p>Lütfen başka bir bölge seçin veya daha sonra tekrar deneyin.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = institutions.map(institution => {
+                // MongoDB ID'sini kullan
+                const institutionId = institution._id;
+                return `
+                    <div class="restaurant-card" data-id="${institutionId}" onclick="goToMenu('${institutionId}', '${institution.name.replace(/'/g, "\\'")}')">
+                        <img src="${institution.profileImageUrl || '../public/image/logo.png'}" 
+                             alt="${institution.name}" 
+                             onerror="this.src='../public/image/logo.png'">
+                        <div class="institution-type ${institution.type}">${institution.type === 'restoran' ? 'Restoran' : 'Mağaza'}</div>
+                        <h3>${institution.name}</h3>
+                        <p class="opening-hours">
+                            <span class="label">Açılış - Kapanış Saatleri:</span> 
+                            <span class="hours">${institution.openingHours || 'Belirtilmemiş'}</span>
+                        </p>
+                        <p>${institution.address.district}, ${institution.address.city}</p>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Filtreleme fonksiyonu
+        function filterInstitutions() {
+            const selectedType = document.getElementById('typeFilter').value;
+            let filteredInstitutions;
+
+            if (selectedType === 'all') {
+                filteredInstitutions = allInstitutions;
+            } else {
+                filteredInstitutions = allInstitutions.filter(institution => institution.type === selectedType);
+            }
+
+            displayInstitutions(filteredInstitutions);
+        }
+
+        // Menü sayfasına yönlendirme fonksiyonu
+        function goToMenu(institutionId, institutionName) {
+            localStorage.setItem('selectedInstitutionId', institutionId);
+            localStorage.setItem('selectedInstitutionName', institutionName);
+            window.location.href = 'menu.html';
+        }
+
+        async function initializePage() {
+            // Kullanıcı kontrolü
+            const donorData = JSON.parse(localStorage.getItem('donorData'));
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+            if (!isLoggedIn || !donorData) {
+                window.location.href = 'bagiscigiris.html';
+                return;
+            }
+
+            // Seçilen il ve ilçe bilgilerini al
+            const selectedCity = localStorage.getItem('selectedCity');
+            const selectedDistrict = localStorage.getItem('selectedDistrict');
+
+            if (!selectedCity || !selectedDistrict) {
+                window.location.href = 'anasayfa.html';
+                return;
+            }
+
+            // Başlığı güncelle
+            const cityTitle = document.getElementById('city-title');
+            cityTitle.textContent = `${selectedCity.charAt(0).toUpperCase() + selectedCity.slice(1)} ${selectedDistrict.charAt(0).toUpperCase() + selectedDistrict.slice(1)} İşletmeleri`;
+
+            // İşletmeleri getir
+            try {
+                const formattedCity = selectedCity.trim();
+                const formattedDistrict = selectedDistrict.trim();
+
+                const response = await fetch(`http://localhost:3000/api/restaurants/list?city=${formattedCity}&district=${formattedDistrict}`);
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}, message: ${data.message}`);
+                }
+
+                if (data.success) {
+                    allInstitutions = data.data;
+                    displayInstitutions(allInstitutions);
+                } else {
+                    throw new Error(data.message || 'Veriler alınamadı');
+                }
+            } catch (error) {
+                console.error('İşletmeleri getirme hatası:', error);
+                const container = document.getElementById('institutionContainer');
+                container.innerHTML = `
+                    <div class="error-message">
+                        <h3>Bir hata oluştu</h3>
+                        <p>İşletmeler yüklenirken bir sorun oluştu: ${error.message}</p>
+                        <p>Lütfen sayfayı yenileyip tekrar deneyin.</p>
+                    </div>
+                `;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            checkSession();
+            initializePage();
+        });
+    </script>
+</body>
+</html>

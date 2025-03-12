@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/css/style.css">
+    <title>Askıda İyilik Var</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+</head>
+
+<body>
+    
+    <div class="topbar">
+        
+        <!-- Sol Taraf: Logo ve site ismi -->
+        <div class="left">
+            <div class="logo-container">
+                <img src="../public/image/logo.png" alt="Site Icon" class="site-icon">
+                <a href="index.html" class="donate-text">askıda iyilik var</a>
+            </div>
+        </div>
+
+        <!-- Hamburger Menü -->
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <!-- Orta Kısım: Menü bağlantıları -->
+        <div class="center-links" id="menuLinks">
+            <a href="hakkimizda.html" class="nav-link">Hakkımızda</a>
+            <a href="nasil-calisir.html" class="nav-link">Nasıl Çalışır?</a>
+            <a href="iletisim.html" class="nav-link">İletişim</a>
+            <a href="sss.html" class="nav-link">SSS</a>
+            <!-- Mobil için giriş butonları -->
+            <div class="mobile-auth-buttons">
+                <a href="bagiscigiris.html" class="auth-btn bagisci-btn">Bağışçı Girişi</a>
+                <a href="isletmegiris.html" class="auth-btn isletme-btn">İşletme Girişi</a>
+            </div>
+        </div>
+
+        <!-- Sağ Taraf: Giriş butonları -->
+        <div class="right">
+            <div class="auth-buttons">
+                <a href="bagiscigiris.html" class="auth-btn bagisci-btn">Bağışçı Girişi</a>
+                <a href="isletmegiris.html" class="auth-btn isletme-btn">İşletme Girişi</a>
+            </div>
+        </div>
+    </div>
+
+<!-- Arka plan fotoğrafı ve içerikler -->
+<div class="hero-section">
+    <div class="content-container">
+        <h1 class="main-title">Öğrencilere Destek Ol</h1>
+        <h2 class="sub-title">ASKIDA İYİLİK VAR!</h2>
+        <p class="description-text">
+            Bulunduğunuz bölgedeki ihtiyaç sahibi öğrencilere destek olun, 
+            toplumsal dayanışmaya katkıda bulunun.
+        </p>
+        <button class="donate-btn" onclick="window.location.href='bagiscigiris.html'">HEMEN BAĞIŞ YAP</button>
+    </div>
+</div>
+
+
+
+    <!-- Diğer içerik için boş alan -->
+    <div class="container">
+        <div class="box">
+            <div class="image-container">
+                <i class="fas fa-hand-holding-heart"></i>
+            </div>
+            <h3 class="title">Kolay Bağış</h3>
+            <p class="description">Birkaç tıkla güvenli ve hızlı bağış yapın, iyiliğe ortak olun.</p>
+        </div>
+
+        <div class="box">
+            <div class="image-container">
+                <i class="fas fa-users"></i>
+            </div>
+            <h3 class="title">Güvenilir Platform</h3>
+            <p class="description">Şeffaf ve güvenilir bağış sistemi ile gönül rahatlığıyla destek olun.</p>
+        </div>
+
+        <div class="box">
+            <div class="image-container">
+                <i class="fas fa-hands-helping"></i>
+            </div>
+            <h3 class="title">Sosyal Etki</h3>
+            <p class="description">Toplumsal dayanışmaya katkıda bulunun, fark yaratın.</p>
+        </div>
+    </div>
+    <!-- 3 kutucuğun altındaki ana kutucuk -->
+    <!-- 3 kutucuğun altındaki ana kutucuk -->
+    <!-- 3 kutucuğun altındaki ana kutucuk -->
+    <div class="main-box">
+        <h2 class="main-title">Mobil Uygulamamızı İndirin</h2>
+        <p class="main-text">
+            Askıda İyilik Var uygulamasını indirin, her an her yerden bağış yapın.
+        </p>
+
+        <!-- QR Kod bölümü -->
+        <div class="qr-code">
+            <img src="../public/image/qr.png" alt="QR Kod"> <!-- QR kod resmi -->
+        </div>
+
+        <!-- Play Store ve App Store kutucukları -->
+        <div class="store-container">
+            <div class="store-box">
+                <i class="fa-brands fa-google-play"></i> <!-- Play Store Logosu -->
+                <a href="playstore_link" target="_blank">Play Store</a>
+            </div>
+            <div class="store-box">
+                <i class="fa-brands fa-app-store-ios"></i> <!-- App Store Logosu -->
+                <a href="appstore_link" target="_blank">App Store</a>
+            </div>
+            
+        </div>
+    </div>
+    <div class="info-box">
+        <h3 class="info-title">Askıda İyilik Nedir?</h3>
+        <p class="info-text">
+            Askıda İyilik Projesi, toplumsal dayanışmayı artırmayı hedefleyen bir sosyal sorumluluk platformudur. 
+            Ekonomik durumu yetersiz öğrencilere çeşitli hizmetler sunarak onların yaşam kalitelerini artırmayı amaçlar. 
+            Öğrenciler, yemek, kıyafet ve sosyal etkinlik gibi alanlarda doğrudan destek alabilirler. 
+            Bağışlar, öğrencilerin ihtiyaçlarına göre doğrudan onlara ulaşır. 
+            Bu proje, öğrencilere daha iyi bir yaşam sunmak için tasarlanmıştır. 
+            Toplumun her kesiminden destek beklemektedir.
+        </p>
+    </div>
+   
+<!-- Sayfanın alt kısmındaki kırmızı bölüm -->
+<div class="footer">
+    <div class="footer-content">
+        <h4 class="footer-title">Askıda İyilik</h4>
+        <div class="contact-info">
+            <span>0555 555 5555</span>
+            <span>askıdaiyilikvar@gmail.com</span>
+            <span>Hatice Soylu</span>
+        </div>
+    </div>
+    <hr class="footer-line">
+    <div class="social-media">
+        <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
+    <p class="footer-bottom">2024 Askıda İyilik</p>
+</div>
+
+<!-- JavaScript dosyasını ekle -->
+<script src="../public/js/main.js"></script>
+
+</body>
+
+</html>

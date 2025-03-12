@@ -1,0 +1,229 @@
+/* Genel Stil */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+}
+
+
+
+/* Başlık Arka Planı */
+.header-section {
+    position: relative;
+    height: 250px;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../image/araba.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.background-overlay h1 {
+    color: white;
+    font-size: 36px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Restoran Kartları */
+.restaurant-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.restaurant-card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: calc(33.333% - 25px);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.restaurant-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.restaurant-card h3 {
+    margin: 15px;
+    font-size: 20px;
+    color: #2d3748;
+}
+
+.restaurant-card p {
+    color: #718096;
+    margin: 0 15px 15px;
+    font-size: 14px;
+}
+
+.restaurant-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.restaurant-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Animasyonlar */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Tasarım */
+@media (max-width: 1024px) {
+    .restaurant-card {
+        width: calc(50% - 25px);
+    }
+}
+
+@media (max-width: 768px) {
+    .restaurant-container {
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .restaurant-card {
+        width: calc(50% - 20px);
+    }
+    
+    .background-overlay h1 {
+        font-size: 28px;
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .restaurant-card {
+        width: 100%;
+    }
+    
+    .background-overlay h1 {
+        font-size: 24px;
+    }
+}
+
+/* Hata ve Boş Sonuç Mesajları */
+.error-message, .no-results {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.error-message h3, .no-results h3 {
+    color: #2d3748;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.error-message p, .no-results p {
+    color: #718096;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.error-message {
+    border-left: 4px solid #E27396;
+}
+
+.no-results {
+    border-left: 4px solid #399918;
+}
+
+/* Filtreleme Bölümü */
+.filter-section {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+    text-align: right;
+}
+
+.filter-section select {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 2px solid #eef2f7;
+    border-radius: 8px;
+    background-color: white;
+    color: #2d3748;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-section select:hover {
+    border-color: #399918;
+}
+
+.filter-section select:focus {
+    outline: none;
+    border-color: #399918;
+    box-shadow: 0 0 0 2px rgba(57, 153, 24, 0.2);
+}
+
+/* Kurum Tipi Etiketi */
+.institution-type {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: white;
+}
+
+.institution-type.restoran {
+    background-color: #399918;
+}
+
+.institution-type.magaza {
+    background-color: #E27396;
+}
+
+/* Açılış-Kapanış Saatleri */
+.opening-hours {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 10px 15px !important;
+}
+
+.opening-hours .label {
+    color: #718096;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.opening-hours .hours {
+    color: #718096;
+    font-size: 14px;
+}

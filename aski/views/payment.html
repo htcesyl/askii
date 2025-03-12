@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ödeme - Askıda İyilik Var</title>
+    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="../public/css/payment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <!-- Topbar -->
+    <div class="topbar">
+        <!-- Sol Taraf: Logo ve site ismi -->
+        <div class="left">
+            <div class="logo-container">
+                <img src="../public/image/logo.png" alt="Site Icon" class="site-icon">
+                <a href="anasayfa.html" class="donate-text">askıda iyilik var</a>
+            </div>
+        </div>
+
+        <!-- Hamburger Menü -->
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <!-- Orta Kısım: Menü bağlantıları -->
+        <div class="center-links" id="menuLinks">
+            <a href="hakkimizda.html" class="nav-link">Hakkımızda</a>
+            <a href="nasil-calisir.html" class="nav-link">Nasıl Çalışır?</a>
+            <a href="iletisim.html" class="nav-link">İletişim</a>
+            <a href="sss.html" class="nav-link">SSS</a>
+        </div>
+
+        <!-- Sağ Taraf: Profil Menüsü -->
+        <div class="right">
+            <div class="profile-section">
+                <div class="profile-dropdown">
+                    <a href="javascript:void(0);" class="profile-btn" id="profileBtn">
+                        Profilim <i class="fa fa-user-circle"></i>
+                    </a>
+                    <div class="dropdown-content">
+                        <div class="user-info">
+                            <span id="userName"></span>
+                            <span id="userEmail"></span>
+                        </div>
+                        <a href="previous-donations.html"><i class="fa fa-history"></i> Önceki Bağışlarım</a>
+                        <a href="settings.html"><i class="fa fa-cog"></i> Ayarlar</a>
+                        <a href="#" onclick="handleLogout()"><i class="fa fa-sign-out-alt"></i> Çıkış Yap</a>
+                    </div>
+                </div>
+                <a href="payment.html" class="cart-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                    Sepetim
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+     <!-- Ana içerik -->
+     <div class="container">
+        <div class="payment-section">
+            <!-- Sipariş özeti -->
+            <div class="order-summary">
+                <h2>Sipariş Özeti</h2>
+                <div id="orderItems" class="order-items">
+                    <!-- Ürünler buraya dinamik olarak eklenecek -->
+                </div>
+                <div class="total-amount">
+                    <span>Toplam Tutar:</span>
+                    <span id="totalAmount">0.00 TL</span>
+                </div>
+            </div>
+
+            <!-- Ödeme formu -->
+            <form onsubmit="handlePayment(event)" class="payment-form">
+                <h2>Ödeme Bilgileri</h2>
+                
+                <div class="form-group">
+                    <label for="cardHolder">Kart Üzerindeki İsim</label>
+                    <input type="text" id="cardHolder" required placeholder="Kart sahibinin adı ve soyadı">
+                </div>
+
+                <div class="form-group">
+                    <label for="cardNumber">Kart Numarası</label>
+                    <input type="text" id="cardNumber" required placeholder="1234 5678 9012 3456" maxlength="19">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="expiryDate">Son Kullanma Tarihi</label>
+                        <input type="text" id="expiryDate" required placeholder="AA/YY" maxlength="5">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cvv">CVV</label>
+                        <input type="text" id="cvv" required placeholder="123" maxlength="3">
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button type="button" onclick="window.location.href='menu.html'" class="back-button">
+                        <i class="fas fa-arrow-left"></i> Geri Dön
+                    </button>
+                    <button type="submit" class="pay-button">
+                        <i class="fas fa-lock"></i> Güvenli Ödeme Yap
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../public/js/payment.js"></script>
+    <script src="../public/js/main.js"></script>
+</body>
+</html> 

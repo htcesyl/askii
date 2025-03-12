@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="../public/css/nasil-calisir.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <title>Nasıl Çalışır? - Askıda İyilik Var</title>
+
+</head>
+
+<body>
+    <!-- Topbar -->
+    <div class="topbar">
+        <!-- Sol Taraf: Logo ve site ismi -->
+        <div class="left">
+            <div class="logo-container">
+                <img src="../public/image/logo.png" alt="Site Icon" class="site-icon">
+                <a href="index.html" class="donate-text">askıda iyilik var</a>
+            </div>
+        </div>
+
+        <!-- Hamburger Menü -->
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <!-- Orta Kısım: Menü bağlantıları -->
+        <div class="center-links" id="menuLinks">
+            <a href="hakkimizda.html" class="nav-link">Hakkımızda</a>
+            <a href="nasil-calisir.html" class="nav-link">Nasıl Çalışır?</a>
+            <a href="iletisim.html" class="nav-link">İletişim</a>
+            <a href="sss.html" class="nav-link">SSS</a>
+            <!-- Mobil için giriş butonları -->
+            <div class="mobile-auth-buttons">
+                <a href="bagiscigiris.html" class="auth-btn bagisci-btn">Bağışçı Girişi</a>
+                <a href="isletmegiris.html" class="auth-btn isletme-btn">İşletme Girişi</a>
+            </div>
+        </div>
+
+        <!-- Sağ Taraf: Giriş butonları -->
+        <div class="right">
+            <div class="auth-buttons">
+                <a href="bagiscigiris.html" class="auth-btn bagisci-btn">Bağışçı Girişi</a>
+                <a href="isletmegiris.html" class="auth-btn isletme-btn">İşletme Girişi</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sayfa Arkaplanı -->
+    <div class="how-it-works-background">
+        <h1 class="how-it-works-title">Askıda İyilik Var Nasıl Çalışır?</h1>
+
+        <!-- Kutucuklar -->
+        <div class="how-it-works-container">
+            <div class="how-it-works-box">
+                <i class="fas fa-user-plus"></i>
+                <div class="box-content">
+                    <h2>Adım 1: Kayıt Olun</h2>
+                    <p>Bağışçı olarak hızlıca üye olun. E-posta adresiniz ve şifrenizle güvenli bir hesap oluşturun. İşletme iseniz, işletme hesabı oluşturarak sisteme dahil olun.</p>
+                </div>
+            </div>
+
+            <div class="how-it-works-box">
+                <i class="fas fa-hand-holding-heart"></i>
+                <div class="box-content">
+                    <h2>Adım 2: Bağış Seçimi</h2>
+                    <p>Anlaşmalı işletmelerden dilediğinizi seçin. Yemek, kıyafet veya sosyal etkinlik gibi farklı kategorilerde bağış yapabilirsiniz. Bağış miktarını belirleyin ve ödemenizi güvenle gerçekleştirin.</p>
+                </div>
+            </div>
+
+            <div class="how-it-works-box">
+                <i class="fas fa-store"></i>
+                <div class="box-content">
+                    <h2>Adım 3: Kupon Oluşturma</h2>
+                    <p>Bağışınız sistem tarafından dijital kupona dönüştürülür. Her kupon benzersiz bir kod ile güvence altına alınır ve ihtiyaç sahiplerine ulaştırılmak üzere hazırlanır.</p>
+                </div>
+            </div>
+
+            <div class="how-it-works-box">
+                <i class="fas fa-qrcode"></i>
+                <div class="box-content">
+                    <h2>Adım 4: QR Kod Sistemi</h2>
+                    <p>Her kupon için özel bir QR kod oluşturulur. Bu kod, bağışınızın güvenli bir şekilde ihtiyaç sahibine ulaşmasını ve sadece yetkili kişiler tarafından kullanılmasını sağlar.</p>
+                </div>
+            </div>
+
+            <div class="how-it-works-box">
+                <i class="fas fa-check-circle"></i>
+                <div class="box-content">
+                    <h2>Adım 5: Yardımın Ulaşması</h2>
+                    <p>İhtiyaç sahibi öğrenciler, kendilerine atanan QR kodları anlaşmalı işletmelerde okutarak yardımlarına ulaşır. Sistem otomatik olarak kullanımı kaydeder ve size bildirim gönderir.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../public/js/main.js"></script>
+</body>
+
+</html>
